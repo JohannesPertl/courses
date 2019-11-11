@@ -36,15 +36,15 @@ function buildTable(jsonObject) {
     var table = document.createElement('table');
     for (var i = 0; i < jsonObject.length; i++) {
 
-        var child = jsonObject[i];
+        var course = jsonObject[i];
         if (i === 0) {
-            addHeaders(table, Object.keys(child));
+            addHeaders(table, Object.keys(course));
         }
         var row = table.insertRow();
-        Object.keys(child).forEach(function (k) {
+        Object.keys(course).forEach(function (k) {
             console.log(k);
             var cell = row.insertCell();
-            cell.appendChild(document.createTextNode(child[k]));
+            cell.appendChild(document.createTextNode(course[k]));
         })
     }
     document.getElementById('container').appendChild(table);
