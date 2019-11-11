@@ -12,8 +12,6 @@ function readDataFromJson(path) {
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             var jsonObject = JSON.parse(this.responseText);
-            console.log(jsonObject[0].unitcode);
-            console.log(jsonObject);
             buildTable(jsonObject);
         }
     };
@@ -28,6 +26,7 @@ function addHeaders(table, keys) {
     for (var i = 0; i < keys.length; i++) {
         var cell = row.insertCell();
         cell.appendChild(document.createTextNode(keys[i]));
+        cell.className = "table-header";
     }
 }
 
