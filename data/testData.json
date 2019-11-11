@@ -1,6 +1,6 @@
 [
 	{
-		"unitcode":"1",
+		"unitcode":"BSG1I",
 		"kursName":"Betriebssysteme Grundlagen",
 		"kursTyp":"iL",
 		"modul":"Informatik 1",
@@ -12,7 +12,7 @@
 		"lehrender":"Roxane Koitz-Hristov"
 	},
 	{
-		"unitcode":"2",
+		"unitcode":"DAT1I",
 		"kursName":"Relationale Datenbanken",
 		"kursTyp":"iL",
 		"modul":"Datenbanken",
@@ -24,7 +24,7 @@
 		"lehrender":"Müslüm Atas"
 	},
 	{
-		"unitcode":"3",
+		"unitcode":"ENG1S",
 		"kursName":"Communication in Engineering",
 		"kursTyp":"Se",
 		"modul":"Wirtschaft und Recht 1",
@@ -36,7 +36,7 @@
 		"lehrender":"Heidemarie Köllinger"
 	},
 	{
-		"unitcode":"4",
+		"unitcode":"INF1V",
 		"kursName":"Grundlagen der Informatik",
 		"kursTyp":"Vo",
 		"modul":"Informatik 1",
@@ -48,7 +48,7 @@
 		"lehrender":"Roxane Koitz-Hristov"
 	},
 	{
-		"unitcode":"5",
+		"unitcode":"MAT1I",
 		"kursName":"Mathematik für Informatik 1",
 		"kursTyp":"iL",
 		"modul":"Informatik 1",
@@ -60,7 +60,7 @@
 		"lehrender":"Lukas Eberhard"
 	},
 	{
-		"unitcode":"6",
+		"unitcode":"NWT1I",
 		"kursName":"Netzwerktechnologien",
 		"kursTyp":"iL",
 		"modul":"Programmierung 1",
@@ -72,7 +72,7 @@
 		"lehrender":"Jürgen Ebner"
 	},
 	{
-		"unitcode":"7",
+		"unitcode":"OKG1V",
 		"kursName":"Ökonomische Grundlagen",
 		"kursTyp":"Vo",
 		"modul":"Wirtschaft und Recht 1",
@@ -84,7 +84,7 @@
 		"lehrender":"Stefan Grünwald"
 	},
 	{
-		"unitcode":"8",
+		"unitcode":"PRG1I",
 		"kursName":"Programmierung 1",
 		"kursTyp":"iL",
 		"modul":"Programmierung 1",
@@ -96,7 +96,7 @@
 		"lehrender":"Lukas Eberhard"
 	},
 	{
-		"unitcode":"9",
+		"unitcode":"DAT2I",
 		"kursName":"Datenbankdesign",
 		"kursTyp":"iL",
 		"modul":"Programmierung 2",
@@ -108,7 +108,7 @@
 		"lehrender":"Müslüm Atas"
 	},
 	{
-		"unitcode":"10",
+		"unitcode":"DSA2I",
 		"kursName":"Datenstrukturen und Algorithmen",
 		"kursTyp":"iL",
 		"modul":"Software Engineering 1",
@@ -120,7 +120,7 @@
 		"lehrender":"Roxane Koitz-Hristov"
 	},
 	{
-		"unitcode":"11",
+		"unitcode":"ENG2S",
 		"kursName":"Professional English",
 		"kursTyp":"Se",
 		"modul":"Wirtschaft und Recht 2",
@@ -132,7 +132,7 @@
 		"lehrender":"Heidemarie Köllinger"
 	},
 	{
-		"unitcode":"12",
+		"unitcode":"KFM2I",
 		"kursName":"Konfigurationsmanagement",
 		"kursTyp":"iL",
 		"modul":"Software Engineering 1",
@@ -144,7 +144,7 @@
 		"lehrender":"Michael Ulm"
 	},
 	{
-		"unitcode":"13",
+		"unitcode":"MAT2I",
 		"kursName":"Mathematik für Informatik 2",
 		"kursTyp":"iL",
 		"modul":"Mathematik",
@@ -156,7 +156,7 @@
 		"lehrender":"Lukas Eberhard"
 	},
 	{
-		"unitcode":"14",
+		"unitcode":"PMA2V",
 		"kursName":"Personalmanagement und Arbeitsrecht",
 		"kursTyp":"Vo",
 		"modul":"Wirtschaft und Recht 2",
@@ -168,7 +168,7 @@
 		"lehrender":"Wolfgang Schabereiter, Katja Unger"
 	},
 	{
-		"unitcode":"15",
+		"unitcode":"PRG2I",
 		"kursName":"Programmierung 2",
 		"kursTyp":"iL",
 		"modul":"Programmierung 2",
@@ -180,7 +180,7 @@
 		"lehrender":"Müslüm Atas"
 	},
 	{
-		"unitcode":"16",
+		"unitcode":"WEB2I",
 		"kursName":"web Technologien & Usability",
 		"kursTyp":"iL",
 		"modul":"Software Engineering 1",
@@ -192,7 +192,7 @@
 		"lehrender":"Roxane Koitz-Hristov"
 	},
 	{
-		"unitcode":"17",
+		"unitcode":"APM3V",
 		"kursName":"Agiles Projektmanagement",
 		"kursTyp":"Vo",
 		"modul":"Software Engineering 2",
@@ -204,7 +204,7 @@
 		"lehrender":"Michael Ulm, Andreas Öffl"
 	},
 	{
-		"unitcode":"18",
+		"unitcode":"ENG3S",
 		"kursName":"Business Communications",
 		"kursTyp":"Se",
 		"modul":"Web Engineering",
@@ -216,7 +216,7 @@
 		"lehrender":"Heidemarie Köllinger"
 	},
 	{
-		"unitcode":"19",
+		"unitcode":"MOB2I",
 		"kursName":"Mobile Platforms",
 		"kursTyp":"iL",
 		"modul":"Software Engineering 2",
@@ -228,7 +228,7 @@
 		"lehrender":"Elmar Krainz, René Schuster"
 	},
 	{
-		"unitcode":"20",
+		"unitcode":"PRA3S",
 		"kursName":"Betriebspraktische individuelle Vertiefung 1",
 		"kursTyp":"Praktikum",
 		"modul":"Betriebspraxis 1",
