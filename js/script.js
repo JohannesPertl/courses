@@ -4,6 +4,10 @@ var JSON_FILE = "./data/testData.json";
 
 window.addEventListener("load", function () {
     readDataFromJson(JSON_FILE);
+
+    var btn = document.getElementById("btnPrint");
+    btn.addEventListener("click", printTableView);
+
 });
 
 
@@ -49,6 +53,11 @@ function buildTable(jsonObject) {
     }
     document.getElementById('container').appendChild(table);
 }
+
+function printTableView() {
+    window.print();
+}
+
 
 
 
