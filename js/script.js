@@ -3,13 +3,15 @@ var JSON_FILE = "./data/testData.json";
 
 window.addEventListener("load", function() {
   readDataFromJson(JSON_FILE);
+  var btn = document.getElementById("btnPrint");
+  btn.addEventListener("click", printTableView);
 });
 
 function readDataFromJson(path) {
   var request = new XMLHttpRequest();
   request.onreadystatechange = function() {
     if (this.readyState === 4) {
-      // if (this.readyState === 4 && this.status === 200) {
+      // if (this.readyState === 4 && this.status === 200) { //TODO: Fix bug
       var jsonObject = JSON.parse(this.responseText);
       buildTable(jsonObject);
     }
@@ -64,4 +66,9 @@ function buildTable(jsonObject) {
     });
   }
   document.getElementById("container").appendChild(table);
+}
+
+
+function printTableView() {
+  window.print();
 }
