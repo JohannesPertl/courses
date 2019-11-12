@@ -1,63 +1,74 @@
 // Global variables
 var JSON_FILE = "./data/testData.json";
 
-
-window.addEventListener("load", function () {
-    readDataFromJson(JSON_FILE);
-
-    var btn = document.getElementById("btnPrint");
-    btn.addEventListener("click", printTableView);
-
+window.addEventListener("load", function() {
+  readDataFromJson(JSON_FILE);
+  var btn = document.getElementById("btnPrint");
+  btn.addEventListener("click", printTableView);
 });
 
-
 function readDataFromJson(path) {
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            var jsonObject = JSON.parse(this.responseText);
-            console.log(jsonObject[0].unitcode);
-            console.log(jsonObject);
-            buildTable(jsonObject);
-        }
-    };
-    request.open("GET", path, true);
-    request.send();
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+    if (this.readyState === 4) {
+      // if (this.readyState === 4 && this.status === 200) { //TODO: Fix bug
+      var jsonObject = JSON.parse(this.responseText);
+      buildTable(jsonObject);
+    }
+  };
+  request.open("GET", path, true);
+  request.send();
 }
-
-
 
 function addHeaders(table, keys) {
-    var row = table.insertRow();
-    for (var i = 0; i < keys.length; i++) {
-        var cell = row.insertCell();
-        cell.appendChild(document.createTextNode(keys[i]));
-    }
+  var header = table.createTHead();
+  var row = header.insertRow();
+  for (var i = 0; i < keys.length; i++) {
+    var cell = row.appendChild(document.createElement("th"));
+    cell.appendChild(document.createTextNode(keys[i]));
+    cell.className = "table-header";
+    cell.setAttribute("scope", "col");
+  }
 }
-
 
 function buildTable(jsonObject) {
-    var table = document.createElement('table');
-    for (var i = 0; i < jsonObject.length; i++) {
+  let attributes = [
+    "Unitcode",
+    "Name",
+    "Typ",
+    "Modul",
+    "SWS",
+    "ECTS",
+    "Semester",
+    "Wahlpflicht",
+    "Studium",
+    "Lehrender"
+  ];
+  var table = document.createElement("table");
+  var tbody = table.appendChild(document.createElement("tbody"));
 
-        var course = jsonObject[i];
-        if (i === 0) {
-            addHeaders(table, Object.keys(course));
-        }
-        var row = table.insertRow();
-        Object.keys(course).forEach(function (k) {
-            console.log(k);
-            var cell = row.insertCell();
-            cell.appendChild(document.createTextNode(course[k]));
-        })
+  for (var i = 0; i < jsonObject.length; i++) {
+    var course = jsonObject[i];
+    if (i === 0) {
+      addHeaders(table, Object.keys(course));
     }
-    document.getElementById('container').appendChild(table);
+    var row = tbody.insertRow();
+    let counter = 0;
+    Object.keys(course).forEach(function(k) {
+      counter++;
+      console.log(k);
+      var cell = row.insertCell();
+      cell.appendChild(document.createTextNode(course[k]));
+      if (counter === 0) {
+        cell.setAttribute("scope", "row");
+      }
+      cell.setAttribute("data-label", attributes[counter]);
+    });
+  }
+  document.getElementById("container").appendChild(table);
 }
+
 
 function printTableView() {
-    window.print();
+  window.print();
 }
-
-
-
-
