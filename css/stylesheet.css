@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For mobile: */
+  .col-s-1 {
+    width: 8.33%;
+  }
+  .col-s-2 {
+    width: 16.66%;
+  }
+  .col-s-3 {
+    width: 25%;
+  }
+  .col-s-4 {
+    width: 33.33%;
+  }
+  .col-s-5 {
+    width: 41.66%;
+  }
+  .col-s-6 {
+    width: 50%;
+  }
+  .col-s-7 {
+    width: 58.33%;
+  }
+  .col-s-8 {
+    width: 66.66%;
+  }
+  .col-s-9 {
+    width: 75%;
+  }
+  .col-s-10 {
+    width: 83.33%;
+  }
+  .col-s-11 {
+    width: 91.66%;
+  }
+  .col-s-12 {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+  }
+  .col-9 {
+    width: 75%;
+  }
+  .col-10 {
+    width: 83.33%;
+  }
+  .col-11 {
+    width: 91.66%;
+  }
+  .col-12 {
+    width: 100%;
+  }
+}
+/* MAIN STYLES */
+
+
+/* Heading 1 */
+h1{ color: black;
+
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 3em;
+  margin: 1% 1% 0.5%;
+  padding-bottom: 2px;
+  padding-top: 3px;
+  padding-left: 0;
+}
+
+
+/* FH LOGO */
+.fh-logo{
+  margin-right: 15px;
+  margin-left: 20px;
+  margin-top: 1%;
+  width: 14%;
+  float: right;
+}
+table {
+  border: 1px solid #A8A8A8;
+  border-collapse: collapse;
+  margin-bottom: 6%;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+}
+
+table caption {
+  font-size: 2em;
+  margin: 0.5em 0 0.75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #A8A8A8;
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: center;
+}
+
+table th {
+  font-size: 0.90em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  color: #cc0033;
+  background-color: #A8A8A8;
+}
+
+@media screen and (max-width: 700px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 2em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #cc0033;
+    display: block;
+    margin-bottom: 6%;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+/*defines the styles for the print view */
+@media print {
+  table {
+    width: 100%;
+    margin: 0;
+    font-size: 60%;
+  }
+
+  tr {
+    page-break-inside: auto; /* Prevents rows from breaking */
+    display: block; /* Needed in order for page-break to work */
+  }
+
+  th, td {
+    width: 135px; /* To force width to columns */
+  }
+
+  .print {
+    display: none;
+  }
+
+}
+
+/*text align vertically */
+button > img,
+button > span {
+  vertical-align: middle;
+}
+button > span{
+  padding-left: 6px;
+}
+
+#btnPrint {
+  text-align: justify;
+  background-color: #A8A8A8;
+  color: black;
+  font-size: 20px;
+  font-family: Helvetica, sans-serif;
+  cursor: pointer; /* Mouse pointer on hover */
+  margin: 5px;
+
+  border: 4px solid #cc0033;
+  border-radius: 20px;
+  padding: 15px;
+  /* sticky button in bottom right */
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+.image {
+  width: 40px;
+}
+
