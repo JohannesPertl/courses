@@ -106,10 +106,7 @@ h1{ color: black;
 
   font-family: 'Archivo Black', sans-serif;
   font-size: 3em;
-  margin-bottom: 0.5%;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin: 1% 1% 0.5%;
   padding-bottom: 2px;
   padding-top: 3px;
   padding-left: 0;
@@ -131,7 +128,7 @@ table {
   padding: 0;
   width: 100%;
   table-layout: fixed;
-  font-family: 'Helvetica';
+  font-family: 'Helvetica', sans-serif;
   font-size: 16px;
 }
 
@@ -156,7 +153,7 @@ table th {
   font-size: 0.90em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: 'Helvetica';
+  font-family: 'Helvetica', sans-serif;
   font-weight: bold;
   color: #cc0033;
   background-color: #A8A8A8;
@@ -216,12 +213,13 @@ table th {
   table {
     width: 100%;
     margin: 0;
+    font-size: 60%;
   }
 
-  /*tr {*/
-  /*  page-break-inside: avoid; !* Prevents rows from breaking *!*/
-  /*  display: block; !* Needed in order for page-break to work *!*/
-  /*}*/
+  tr {
+    page-break-inside: auto; /* Prevents rows from breaking */
+    display: block; /* Needed in order for page-break to work */
+  }
 
   th, td {
     width: 135px; /* To force width to columns */
@@ -247,17 +245,13 @@ button > span{
   background-color: #A8A8A8;
   color: black;
   font-size: 20px;
-  font-family: Helvetica;
+  font-family: Helvetica, sans-serif;
   cursor: pointer; /* Mouse pointer on hover */
   margin: 5px;
 
-  border: 4px #cc0033;
-  border-style: solid;
+  border: 4px solid #cc0033;
   border-radius: 20px;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
   /* sticky button in bottom right */
   position: fixed;
   right: 0;
