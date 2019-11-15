@@ -1,5 +1,5 @@
 // Global variables
-var JSON_FILE = "https://raw.githubusercontent.com/MobileSoftwareDevelopment/web-application-development/dev/data/testData.json";
+var JSON_FILE = "https://raw.githubusercontent.com/MobileSoftwareDevelopment/courses/dev/data/testData.json";
 
 window.addEventListener("load", function () {
     readDataFromJson(JSON_FILE);
