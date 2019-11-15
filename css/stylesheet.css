@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Archivo+Black&display=swap");
 
 * {
   box-sizing: border-box;
@@ -100,21 +100,20 @@
 }
 /* MAIN STYLES */
 
-
 /* Heading 1 */
-h1{ color: black;
+h1 {
+  color: black;
 
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 3em;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 2.5em;
   margin: 1% 1% 0.5%;
   padding-bottom: 2px;
   padding-top: 3px;
   padding-left: 0;
 }
 
-
 /* FH LOGO */
-.fh-logo{
+.fh-logo {
   margin-right: 15px;
   margin-left: 20px;
   margin-top: 1%;
@@ -122,14 +121,14 @@ h1{ color: black;
   float: right;
 }
 table {
-  border: 1px solid #A8A8A8;
+  border: 1px solid #a8a8a8;
   border-collapse: collapse;
   margin-bottom: 6%;
   padding: 0;
   width: 100%;
   table-layout: fixed;
-  font-family: 'Helvetica', sans-serif;
-  font-size: 16px;
+  font-family: "Helvetica", sans-serif;
+  font-size: 14px;
 }
 
 table caption {
@@ -139,7 +138,7 @@ table caption {
 
 table tr {
   background-color: #f8f8f8;
-  border: 1px solid #A8A8A8;
+  border: 1px solid #a8a8a8;
   padding: 0.35em;
 }
 
@@ -150,16 +149,39 @@ table td {
 }
 
 table th {
-  font-size: 0.90em;
+  font-size: 0.9em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: 'Helvetica', sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-weight: bold;
   color: #cc0033;
-  background-color: #A8A8A8;
+  background-color: #a8a8a8;
 }
 
-@media screen and (max-width: 700px) {
+/* change the font size of the table */
+@media screen and (max-width: 950px) {
+  table {
+    font-size: 13px;
+  }
+  h1 {
+    font-size: 2.3em;
+  }
+}
+
+/* change the font size of the table */
+@media screen and (max-width: 890px) {
+  table {
+    font-size: 11px;
+  }
+  h1 {
+    font-size: 2.1em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 1.4em;
+  }
   table {
     border: 0;
   }
@@ -221,14 +243,14 @@ table th {
     display: block; /* Needed in order for page-break to work */
   }
 
-  th, td {
+  th,
+  td {
     width: 135px; /* To force width to columns */
   }
 
   .print {
     display: none;
   }
-
 }
 
 /*text align vertically */
@@ -236,13 +258,13 @@ button > img,
 button > span {
   vertical-align: middle;
 }
-button > span{
+button > span {
   padding-left: 6px;
 }
 
 #btnPrint {
   text-align: justify;
-  background-color: #A8A8A8;
+  background-color: #a8a8a8;
   color: black;
   font-size: 20px;
   font-family: Helvetica, sans-serif;
@@ -261,4 +283,3 @@ button > span{
 .image {
   width: 40px;
 }
-
