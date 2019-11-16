@@ -86,7 +86,7 @@ function buildTable(jsonObject) {
 
         let row = tbody.insertRow();
         let counter = 0;
-        for (const k of Object.keys(course)) {
+        Object.keys(course).forEach(function (k) {
             counter++;
 
             let cell = row.insertCell();
@@ -106,7 +106,7 @@ function buildTable(jsonObject) {
                 cell.setAttribute("scope", "row");
             }
             cell.setAttribute("data-label", attributes[counter]);
-        }
+        });
 
     }
     document.getElementById("container").appendChild(table);
