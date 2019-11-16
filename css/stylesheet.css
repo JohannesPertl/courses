@@ -130,7 +130,7 @@
 h1 {
     color: black;
     font-family: "Archivo Black", sans-serif;
-    font-size: 6vh;
+    font-size: 4.5vh;
     margin-bottom: 0;
     margin-left: 15px;
     padding-bottom: 0;
@@ -159,7 +159,7 @@ h1 {
 }
 
 input {
-    width: 220px;
+    width: 165px;
     margin-top: 18px;
     float: left;
     margin-left: 5px;
@@ -241,7 +241,7 @@ table th {
 
 @media screen and (max-width: 800px) {
     h1 {
-        font-size: 2em;
+        font-size: 1.7em;
         margin-left: 3%;
     }
 
