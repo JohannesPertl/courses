@@ -52,7 +52,6 @@ function readDataFromJson(url) {
             let jsonObject;
             try {
                 jsonObject = JSON.parse(this.responseText);
-                console.log(jsonObject.length);
             } catch (e) {
                 console.log("Couldn't read json file. Error: " + e);
                 return;
