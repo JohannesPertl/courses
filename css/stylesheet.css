@@ -150,6 +150,7 @@ h1 {
 /* "Kurs suchen" - Text */
 .searchtext {
     font-size: 0.6vw;
+    font-family: "Helvetica", sans-serif;
     float: left;
     margin-left: 1%;
     margin-top: 1%;
@@ -160,10 +161,8 @@ h1 {
 
 input {
     width: 18%;
-    margin-top: 1.6vw;
+    margin-top: 1.5vw;
     float: left;
-
-
 }
 
 input[type=text] {
@@ -173,8 +172,6 @@ input[type=text] {
     padding-left: 0.5%;
     padding-top: 0;
     padding-bottom: 0;
-
-
 }
 
 
@@ -229,7 +226,7 @@ table th {
 
     input {
         width: 18%;
-        margin-top: 1.6vw;
+        margin-top: 1.5vw;
         float: left;
     }
 
@@ -256,7 +253,7 @@ table th {
 
     input {
         width: 18%;
-        margin-top: 1.5vw;
+        margin-top: 1.3vw;
         float: left;
     }
 
@@ -281,7 +278,7 @@ table th {
 
     input {
         width: 34%;
-        margin-top: 1.5vw;
+        margin-top: 1vw;
         float: left;
     }
 
