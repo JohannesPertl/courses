@@ -1,13 +1,21 @@
-// Global Variables
+/**
+ * Global variables
+ */
 const JSON_FILE = "https://raw.githubusercontent.com/MobileSoftwareDevelopment/courses/dev/data/testData.json";
 
+/**
+ * Calls functions after the page has fully loaded
+ */
 window.addEventListener("load", function () {
-
     readDataFromJson(JSON_FILE);
     let btn = document.getElementById("btnPrint");
     btn.addEventListener("click", printTableView);
 });
 
+/**
+ * Searches the table for user input
+ * Highlights matching cells and hides non-matching rows
+ */
 function SearchTable() {
     let input = document.getElementById("search-courses").value.trim().toLowerCase();
     let table = document.getElementById("table");
@@ -33,7 +41,11 @@ function SearchTable() {
     }
 }
 
-function readDataFromJson(path) {
+/**
+ * Reads data from a json file supplied by URL
+ * @param url The URL to the json file
+ */
+function readDataFromJson(url) {
     let request = new XMLHttpRequest();
     request.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -48,21 +60,15 @@ function readDataFromJson(path) {
             buildTable(jsonObject);
         }
     };
-    request.open("GET", path, true);
+    request.open("GET", url, true);
     request.send();
 }
 
-function addHeaders(table, keys) {
-    let header = table.createTHead();
-    let row = header.insertRow();
-    for (let i = 0; i < keys.length; i++) {
-        let cell = row.appendChild(document.createElement("th"));
-        cell.appendChild(document.createTextNode(keys[i]));
-        cell.className = "table-header";
-        cell.setAttribute("scope", "col");
-    }
-}
-
+/**
+ * Builds a table from a supplied jsonObject
+ * Formats and displays the table
+ * @param jsonObject The jsonObject containing the data
+ */
 function buildTable(jsonObject) {
     let attributes = [
         "Unitcode",
@@ -95,7 +101,7 @@ function buildTable(jsonObject) {
             cell.appendChild(document.createTextNode(course[k]));
 
 
-            // Format Wahlpflichtfach
+            // Format "true" and "false" to user-friendly text
             switch (cell.innerText.toLowerCase()) {
                 case "true":
                     cell.innerText = "Ja";
@@ -114,7 +120,25 @@ function buildTable(jsonObject) {
     document.getElementById("container").appendChild(table);
 }
 
+/**
+ * Adds headers to a supplied table
+ * @param table The table
+ * @param keys Keys of the table
+ */
+function addHeaders(table, keys) {
+    let header = table.createTHead();
+    let row = header.insertRow();
+    for (let i = 0; i < keys.length; i++) {
+        let cell = row.appendChild(document.createElement("th"));
+        cell.appendChild(document.createTextNode(keys[i]));
+        cell.className = "table-header";
+        cell.setAttribute("scope", "col");
+    }
+}
 
+/**
+ * Print current page
+ */
 function printTableView() {
     window.print();
 }
