@@ -11,14 +11,16 @@ window.addEventListener("load", function () {
 function SearchTable() {
     let input = document.getElementById("search-courses").value.trim().toLowerCase();
     let table = document.getElementById("table");
-    for (let row of table.rows) {
+    for (let i = 0; i < table.rows.length; i++) {
+        let row = table.rows[i];
         if (row.rowIndex === 0) continue;
         let foundMatch = false;
-        for (let cell of row.cells) {
+        for (let j = 0; j < row.cells.length; j++) {
+            let cell = row.cells[j];
             cell.style.backgroundColor = '#f8f8f8';
             cell.style.color = '#000000';
             if (input) {
-                if (cell.innerText.toLowerCase().includes(input)) {
+                if (cell.innerText.toLowerCase().indexOf(input) >= 0) {
                     cell.style.backgroundColor = "rgba(168,168,168,0.2)";
                     cell.style.color = '#cc0033';
                     foundMatch = true;
@@ -86,7 +88,7 @@ function buildTable(jsonObject) {
 
         let row = tbody.insertRow();
         let counter = 0;
-        for (const k of Object.keys(course)) {
+        Object.keys(course).forEach(function (k) {
             counter++;
 
             let cell = row.insertCell();
@@ -106,7 +108,7 @@ function buildTable(jsonObject) {
                 cell.setAttribute("scope", "row");
             }
             cell.setAttribute("data-label", attributes[counter]);
-        }
+        });
 
     }
     document.getElementById("container").appendChild(table);
