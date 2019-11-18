@@ -4,12 +4,6 @@
     box-sizing: border-box;
 }*/
 
-.container {
-  margin: 0 auto;
-  max-width: 1280px;
-  width: 90%;
-}
-
 .row::after {
   content: "";
   clear: both;
@@ -126,20 +120,6 @@
   .col-12 {
     width: 100%;
   }
-}
-
-/* Material Icon sizes */
-.material-icons.md-18 {
-  font-size: 18px;
-}
-.material-icons.md-24 {
-  font-size: 24px;
-}
-.material-icons.md-36 {
-  font-size: 36px;
-}
-.material-icons.md-48 {
-  font-size: 48px;
 }
 
 /* MAIN STYLES */
@@ -307,10 +287,6 @@ table th {
 
 /*PRINT-VIEW -> defines the styles for the print view */
 @media print {
-  .container {
-    width: 100%;
-  }
-
   table {
     width: 98%;
     margin: 0;
@@ -369,25 +345,7 @@ button > span {
   bottom: 0;
 }
 
-Print-Icon .image {
+/* Print-Icon */
+.image {
   width: 4vh;
-}
-
-/* Floating print Button */
-.float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 15px;
-  right: 15px;
-  background-color: #a8a8a8;
-  color: black;
-  border: 0.2vh solid #cc0033;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
-}
-
-.my-float {
-  margin-top: 15px;
 }
