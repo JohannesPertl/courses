@@ -2,7 +2,7 @@
  * Global variables
  */
 const JSON_FILE =
-  "https://raw.githubusercontent.com/JohannesPertl/courses/dev/data/testData.json";
+  "https://gist.githubusercontent.com/JohannesPertl/2a6c1a806f7308ed040bda6a38f82499/raw/573a83d00c0b06bdd942957989ba69d71b94a344/testData.json";
 
 /**
  * Calls functions after the page has fully loaded
