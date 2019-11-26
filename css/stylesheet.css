@@ -5,402 +5,347 @@
 }*/
 
 .row::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 [class*="col-"] {
-    float: left;
-    padding: 15px;
+  float: left;
+  padding: 15px;
 }
 
 /* For mobile phones: */
 [class*="col-"] {
-    width: 100%;
-
+  width: 100%;
 }
 
 @media only screen and (min-width: 600px) {
-    /* For mobile: */
-    .col-s-1 {
-        width: 8.33%;
-    }
+  /* For mobile: */
+  .col-s-1 {
+    width: 8.33%;
+  }
 
-    .col-s-2 {
-        width: 16.66%;
-    }
+  .col-s-2 {
+    width: 16.66%;
+  }
 
-    .col-s-3 {
-        width: 25%;
-    }
+  .col-s-3 {
+    width: 25%;
+  }
 
-    .col-s-4 {
-        width: 33.33%;
-    }
+  .col-s-4 {
+    width: 33.33%;
+  }
 
-    .col-s-5 {
-        width: 41.66%;
-    }
+  .col-s-5 {
+    width: 41.66%;
+  }
 
-    .col-s-6 {
-        width: 50%;
-    }
+  .col-s-6 {
+    width: 50%;
+  }
 
-    .col-s-7 {
-        width: 58.33%;
-    }
+  .col-s-7 {
+    width: 58.33%;
+  }
 
-    .col-s-8 {
-        width: 66.66%;
-    }
+  .col-s-8 {
+    width: 66.66%;
+  }
 
-    .col-s-9 {
-        width: 75%;
-    }
+  .col-s-9 {
+    width: 75%;
+  }
 
-    .col-s-10 {
-        width: 83.33%;
-    }
+  .col-s-10 {
+    width: 83.33%;
+  }
 
-    .col-s-11 {
-        width: 91.66%;
-    }
+  .col-s-11 {
+    width: 91.66%;
+  }
 
-    .col-s-12 {
-        width: 100%;
-    }
-
+  .col-s-12 {
+    width: 100%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    /* For desktop: */
-    .col-1 {
-        width: 8.33%;
-    }
+  /* For desktop: */
+  .col-1 {
+    width: 8.33%;
+  }
 
-    .col-2 {
-        width: 16.66%;
-    }
+  .col-2 {
+    width: 16.66%;
+  }
 
-    .col-3 {
-        width: 25%;
-    }
+  .col-3 {
+    width: 25%;
+  }
 
-    .col-4 {
-        width: 33.33%;
-    }
+  .col-4 {
+    width: 33.33%;
+  }
 
-    .col-5 {
-        width: 41.66%;
-    }
+  .col-5 {
+    width: 41.66%;
+  }
 
-    .col-6 {
-        width: 50%;
-    }
+  .col-6 {
+    width: 50%;
+  }
 
-    .col-7 {
-        width: 58.33%;
-    }
+  .col-7 {
+    width: 58.33%;
+  }
 
-    .col-8 {
-        width: 66.66%;
-    }
+  .col-8 {
+    width: 66.66%;
+  }
 
-    .col-9 {
-        width: 75%;
-    }
+  .col-9 {
+    width: 75%;
+  }
 
-    .col-10 {
-        width: 83.33%;
-    }
+  .col-10 {
+    width: 83.33%;
+  }
 
-    .col-11 {
-        width: 91.66%;
-    }
+  .col-11 {
+    width: 91.66%;
+  }
 
-    .col-12 {
-        width: 100%;
-    }
+  .col-12 {
+    width: 100%;
+  }
 }
 
 /* MAIN STYLES */
 
 /* Heading 1 */
 h1 {
-    color: black;
-    font-family: "Archivo Black", sans-serif;
-    font-size: 3vw;
-    margin-bottom: 0;
-    margin-left: 1%;
-    padding-bottom: 0;
-    padding-top: 0.5vw;
-    padding-left: 0;
+  color: black;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 4.5vh;
+  margin-bottom: 0;
+  margin-left: 15px;
+  padding-bottom: 0;
+  padding-top: 0.5vw;
+  padding-left: 0;
 }
 
 /* FH LOGO */
 .fh-logo {
-    margin-right: 1%;
-    margin-top: 1%;
-    margin-bottom: 0.5%;
-    width: 21vw;
-    float: right;
+  margin-right: 1%;
+  margin-top: 1%;
+  margin-bottom: 0.5%;
+  width: 21vw;
+  float: right;
 }
 
-/* "Kurs suchen" - Text */
 .searchtext {
-    font-size: 0.6vw;
-    font-family: "Helvetica", sans-serif;
-    float: left;
-    margin-left: 1%;
-    margin-top: 1%;
-    margin-right: 0.7%;
-    color: #cc0033;
-    display: inline;
+  font-size: 15px;
+  font-family: "Helvetica", sans-serif;
+  float: left;
+  margin-left: 15px;
+  margin-top: 0;
+  margin-right: 0.7%;
+  color: #cc0033;
+  display: inline;
 }
 
 input {
-    width: 18%;
-    margin-top: 1.5vw;
-    float: left;
+  width: 165px;
+  margin-top: 18px;
+  float: left;
+  margin-left: 5px;
 }
 
-input[type=text] {
-    background-color: #f8f8f8;
-    color: #cc0033;
-    font-size: 1.2vw;
-    padding-left: 0.5%;
-    padding-top: 0;
-    padding-bottom: 0;
+input[type="text"] {
+  background-color: #f8f8f8;
+  color: #cc0033;
+  font-size: 20px;
+  padding-left: 0.5%;
+  padding-top: 0;
+  padding-bottom: 0;
 }
-
 
 /* Table */
 table {
-    border: 1px solid #a8a8a8;
-    border-collapse: collapse;
-    margin-bottom: 6%;
-    padding: 0;
-    width: 98%;
-    table-layout: fixed;
-    font-family: "Helvetica", sans-serif;
-    font-size: 14px;
+  border: 1px solid #a8a8a8;
+  border-collapse: collapse;
+  margin-bottom: 6%;
+  padding: 0;
+  width: 98%;
+  table-layout: fixed;
+  font-family: "Helvetica", sans-serif;
+  font-size: 14px;
 }
 
 table caption {
-    font-size: 2em;
-    margin: 0.5em 0 0.75em;
+  font-size: 2em;
+  margin: 0.5em 0 0.75em;
 }
 
 table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #a8a8a8;
-    padding: 0.35em;
+  background-color: #f8f8f8;
+  border: 1px solid #a8a8a8;
+  padding: 0.35em;
 }
 
 table th,
 table td {
-    padding: 0.625em;
-    text-align: center;
+  padding: 0.625em;
+  text-align: center;
 }
 
 table th {
-    font-size: 0.9em;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-family: "Helvetica", sans-serif;
-    font-weight: bold;
-    color: #cc0033;
-    background-color: #a8a8a8;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+  color: #cc0033;
+  background-color: #a8a8a8;
 }
 
 /* change the font size of the table */
 @media screen and (max-width: 950px) {
-    table {
-        font-size: 13px;
-    }
-
-    .searchtext {
-        font-size: 0.6vw;
-    }
-
-    input {
-        width: 18%;
-        margin-top: 1.5vw;
-        float: left;
-    }
-
-    input[type=text] {
-        font-size: 1.2vw;
-    }
-
+  table {
+    font-size: 13px;
+  }
 }
 
 /* change the font size of the table */
 @media screen and (max-width: 890px) {
-    table {
-        font-size: 11px;
-    }
+  table {
+    font-size: 11px;
+  }
 
-    h1 {
-        font-size: 2.5em;
-        margin-left: 2%;
-    }
-
-    .searchtext {
-        font-size: 0.5vw;
-    }
-
-    input {
-        width: 18%;
-        margin-top: 1.3vw;
-        float: left;
-    }
-
-    input[type=text] {
-        font-size: 1.1vw;
-    }
-
-
+  h1 {
+    font-size: 2.5em;
+    margin-left: 2%;
+  }
 }
 
 @media screen and (max-width: 800px) {
-    h1 {
-        font-size: 2em;
-        margin-left: 3%;
-    }
+  h1 {
+    font-size: 1.7em;
+    margin-left: 3%;
+  }
 
-    .searchtext {
-        font-size: 1.5vw;
-        margin-left: 3%;
-        margin-right: 0.5%;
-    }
+  table {
+    border: 0;
+  }
 
-    input {
-        width: 34%;
-        margin-top: 1vw;
-        float: left;
-    }
+  table caption {
+    font-size: 2em;
+  }
 
-    input[type=text] {
-        font-size: 2vw;
-        margin-top: 3.5%;
-    }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
 
+  table tr {
+    border-bottom: 4px solid #cc0033;
+    border-left: 2px solid #a8a8a8;
+    display: block;
+    margin-bottom: 6%;
+  }
 
-    table {
-        border: 0;
-    }
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
 
-    table caption {
-        font-size: 2em;
-    }
-
-    table thead {
-        border: none;
-        clip: rect(0 0 0 0);
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-    }
-
-    table tr {
-        border-bottom: 4px solid #cc0033;
-        border-left: 2px solid #a8a8a8;
-        display: block;
-        margin-bottom: 6%;
-    }
-
-    table td {
-        border-bottom: 1px solid #ddd;
-        display: block;
-        font-size: 0.8em;
-        text-align: right;
-    }
-
-    table td::before {
-        /*
+  table td::before {
+    /*
         * aria-label has no advantage, it won't be read inside a table
         content: attr(aria-label);
         */
-        content: attr(data-label);
-        float: left;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
 
-    table td:last-child {
-        border-bottom: 0;
-    }
-
-
+  table td:last-child {
+    border-bottom: 0;
+  }
 }
 
 /*PRINT-VIEW -> defines the styles for the print view */
 @media print {
-    table {
-        width: 98%;
-        margin: 0;
-        font-size: 60%;
-    }
+  table {
+    width: 98%;
+    margin: 0;
+    font-size: 60%;
+  }
 
-    tr {
-        page-break-inside: auto; /* Prevents rows from breaking */
-        display: block; /* Needed in order for page-break to work */
-    }
+  tr {
+    page-break-inside: auto; /* Prevents rows from breaking */
+    display: block; /* Needed in order for page-break to work */
+  }
 
-    th,
-    td {
-        width: 135px; /* To force width to columns */
-    }
+  th,
+  td {
+    width: 135px; /* To force width to columns */
+  }
 
-    /* Print-version - disable Button and Searchfield*/
-    .print {
-        display: none;
-    }
+  /* Print-version - disable Button and Searchfield*/
+  .print {
+    display: none;
+  }
 
-    input {
-        display: none;
+  input {
+    display: none;
+  }
 
-    }
-
-    .searchtext {
-        display: none;
-    }
+  .searchtext {
+    display: none;
+  }
 }
 
 /*text align vertically */
 button > img,
 button > span {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 button > span {
-    padding-left: 6px;
+  padding-left: 6px;
 }
 
 /* Print-Button */
 #btnPrint {
-    text-align: justify;
-    background-color: #a8a8a8;
-    color: black;
-    font-size: 1.2vw;
-    font-family: Helvetica, sans-serif;
-    cursor: pointer; /* Mouse pointer on hover */
-    margin: 5px;
-    border: 0.2vw solid #cc0033;
-    border-radius: 1.5vw;
-    padding: 15px;
-    /* sticky button in bottom right */
-    position: fixed;
-    right: 0;
-    bottom: 0;
+  text-align: justify;
+  background-color: #a8a8a8;
+  color: black;
+  font-size: 1.5vh;
+  font-family: Helvetica, sans-serif;
+  cursor: pointer; /* Mouse pointer on hover */
+  margin: 5px;
+  border: 0.2vh solid #cc0033;
+  border-radius: 1.5vh;
+  padding: 13px;
+  /* sticky button in bottom right */
+  position: fixed;
+  right: 0;
+  bottom: 0;
 }
 
 /* Print-Icon */
 .image {
-    width: 3vw;
+  width: 4vh;
 }
