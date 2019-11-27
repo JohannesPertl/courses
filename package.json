@@ -1,0 +1,24 @@
+{
+  "name": "courses",
+  "version": "1.0.0",
+  "description": "add and edit courses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohannesPertl/courses.git"
+  },
+  "keywords": [
+    "courses",
+    "lecturers",
+    "rooms"
+  ],
+  "author": "Hacker, Olczak, Pertl, Pollanz, Schreyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JohannesPertl/courses/issues"
+  },
+  "homepage": "https://github.com/JohannesPertl/courses#readme"
+}

@@ -1,8 +1,7 @@
 /**
  * Global variables
  */
-const JSON_FILE =
-  "https://raw.githubusercontent.com/MobileSoftwareDevelopment/courses/dev/data/testData.json";
+const JSON_FILE = "data/testData.json";
 
 /**
  * Calls functions after the page has fully loaded
