@@ -22,27 +22,33 @@ function printTable() {
         /></a>
         <h1>Kurs Übersicht</h1>
       </header>
-  
-      <div class="searchtext">
-        <h2>Kurs suchen:</h2>
-      </div>
-  
-      <div class="search">
-        <label for="search-courses"></label>
-        <input
-          type="text"
-          placeholder="&#8981;"
-          id="search-courses"
-          onkeyup="SearchTable()"
-        />
-      </div>
-  
-      <div class="row">
-        <div class="col-12 col-s-12">
-          <div id="container" class="table-container"></div>
+
+      <!-- open container -->
+      <div class="container">
+
+        <div class="searchtext">
+          <h2>Kurs suchen:</h2>
         </div>
-      </div>
-  
+    
+        <div class="search">
+          <label for="search-courses"></label>
+          <input
+            type="text"
+            placeholder="&#8981;"
+            id="search-courses"
+            onkeyup="SearchTable()"
+          />
+        </div>
+    
+        <div class="row">
+          <div class="col-12 col-s-12">
+            <div id="container" class="table-container"></div>
+          </div>
+        </div>
+        <!-- close container -->
+        </div>
+
+
       <footer>
         <div class="print">
           <button id="btnPrint">

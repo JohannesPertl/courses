@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Archivo+Black&display=swap");
 
-/* {
-    box-sizing: border-box;
-}*/
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
 
 .row::after {
   content: "";
