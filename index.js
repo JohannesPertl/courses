@@ -16,7 +16,7 @@ const server = http.createServer((request, response) => {
   // get current url for navigation through web application
   const parts = request.url.split("/");
 
-  if (parts.includes("js")) {
+  if (parts.includes("frontend")) {
     fs.readFile(__dirname + request.url, (err, data) => {
       if (err) {
         response.statusCode = 404;
