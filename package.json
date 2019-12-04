@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/JohannesPertl/courses/issues"
   },
-  "homepage": "https://github.com/JohannesPertl/courses#readme"
+  "homepage": "https://github.com/JohannesPertl/courses#readme",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
 }
