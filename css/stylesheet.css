@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Archivo+Black&display=swap");
 
-.container {
+/* .container {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%;
-}
+  width: 98%;
+} */
 
 .row::after {
   content: "";
@@ -14,7 +14,7 @@
 
 [class*="col-"] {
   float: left;
-  padding: 15px;
+  padding: 15px 0px 15px 0px;
 }
 
 /* For mobile phones: */
