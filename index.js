@@ -3,8 +3,8 @@ const fs = require("fs");
 
 //inport functions
 const tableView = require("./views/tableView.js");
-const saveNewData = require("./functions/saveNewData.js");
-const updateData = require("./functions/updateData.js");
+const saveNewData = require("./functions/addNewCourse.js");
+const updateData = require("./functions/changeCourse.js");
 
 //create form view
 const inputForm = require("./views/inputForm");
