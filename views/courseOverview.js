@@ -1,12 +1,10 @@
-const fs = require("fs");
-
 /**
  * return the html structure for the standard view of the table (index page)
  */
 function printTable() {
   console.log("print view");
 
-  const tableHTML = `<!DOCTYPE html>
+  return `<!DOCTYPE html>
   <html lang="de-AT">
     <head>
       <meta charset="UTF-8" />
@@ -42,7 +40,7 @@ function printTable() {
         </div>
         
         <div class="">
-        <a href="/addCourse"><img class="image" src="/resources/icon_plus.png" alt="neuen Kurs anlegen" title="Neuen Kurs Anlegen" />Neuen Kurs Anlegen</a>
+        <a href="/new-course"><img class="image" src="/resources/icon_plus.png" alt="neuen Kurs anlegen" title="Neuen Kurs Anlegen" />Neuen Kurs Anlegen</a>
         </div>
         
         <div class="row">
@@ -67,7 +65,6 @@ function printTable() {
       </footer>
     </body>
   </html>`;
-  return tableHTML;
 }
 
 module.exports = printTable;

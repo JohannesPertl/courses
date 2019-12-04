@@ -1,4 +1,4 @@
-function inputForm(unitcode, courses) {
+function updateCourseView(unitCode, courses) {
   //prepare empty form
   let course = {
     unitcode: "",
@@ -15,14 +15,14 @@ function inputForm(unitcode, courses) {
 
   let inputFormHeader = "Neuen Kurs erstellen";
 
-  if (unitcode) {
-    course = courses.find(crs => crs.unitcode === parseInt(unitcode));
-    inputFormHeader = "Kurs änderen";
+  if (unitCode) {
+    course = courses.find(crs => crs.unitcode === parseInt(unitCode));
+    inputFormHeader = "Kurs ändern";
   }
 
   //build form with javascript
-  const form = `<!DOCTYPE html>
-<html>
+  return `<!DOCTYPE html>
+<html lang="de-AT">
     <head>
         <title>${inputFormHeader}</title>
         <meta charset="utf-8">
@@ -65,7 +65,6 @@ function inputForm(unitcode, courses) {
         </form>
     </body>
 </html>`;
-  return form;
 }
 
-module.exports = inputForm;
+module.exports = updateCourseView;

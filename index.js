@@ -2,12 +2,12 @@ const http = require("http");
 const fs = require("fs");
 
 //inport functions
-const tableView = require("./views/tableView.js");
-const saveNewData = require("./functions/addNewCourse.js");
-const updateData = require("./functions/changeCourse.js");
+const courseOverview = require("./views/courseOverview.js");
+const addNewCourse = require("./functions/addNewCourse.js");
+const changeCourse = require("./functions/changeCourse.js");
 
 //create form view
-const inputForm = require("./views/inputForm");
+const inputForm = require("./views/updateCourseView");
 
 // load additional module formidable, A Node.js module for parsing form data
 // more details at https://www.npmjs.com/package/formidable
@@ -67,16 +67,16 @@ const server = http.createServer((request, response) => {
     /**
      * print the input form
      */
-  } else if (parts.includes("addCourse")) {
+  } else if (parts.includes("new-course")) {
     send(response, inputForm());
 
     /**
      * save input form
      */
-  } else if (parts.includes("save") && request.method === "POST") {
+  } else if (parts.includes("addNewCourse") && request.method === "POST") {
     const form = new formidable.IncomingForm();
     form.parse(request, (err, course, files) => {
-      let result = saveNewData(course);
+      let result = addNewCourse(course);
 
       if (result) {
         redirect(response, "/");
@@ -87,10 +87,10 @@ const server = http.createServer((request, response) => {
     /**
      * print the input form
      */
-  } else if (parts.includes("update") && request.method === "POST") {
+  } else if (parts.includes("changeCourse") && request.method === "POST") {
     const form = new formidable.IncomingForm();
     form.parse(request, (err, course, files) => {
-      let result = updateData(course);
+      let result = changeCourse(course);
 
       if (result) {
         redirect(response, "/");
@@ -102,7 +102,7 @@ const server = http.createServer((request, response) => {
      * print the input form
      */
   } else {
-    send(response, tableView());
+    send(response, courseOverview());
   }
 });
 
