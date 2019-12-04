@@ -4,15 +4,15 @@ const fs = require("fs");
  * return the html structure for the standard view of the table (index page)
  */
 function printTable() {
-    console.log("print view");
+  console.log("print view");
 
-    const tableHTML = `<!DOCTYPE html>
+  const tableHTML = `<!DOCTYPE html>
   <html lang="de-AT">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <link rel="stylesheet" href="css/stylesheet.css" />
-      <script src="js/script.js" async></script>
+      <script src="frontend/script.js" async></script>
       <title>FH Joanneum - Courses</title>
       </head>
   
@@ -67,7 +67,7 @@ function printTable() {
       </footer>
     </body>
   </html>`;
-    return tableHTML;
+  return tableHTML;
 }
 
 module.exports = printTable;
