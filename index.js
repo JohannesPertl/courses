@@ -3,6 +3,8 @@ const fs = require("fs");
 
 //inport functions
 const tableView = require("./views/tableView.js");
+const saveNewData = require("./functions/saveNewData.js");
+const updateData = require("./functions/updateData.js");
 
 //create form view
 const inputForm = require("./views/inputForm");
@@ -71,19 +73,31 @@ const server = http.createServer((request, response) => {
     /**
      * save input form
      */
-    // } else if (parts.includes("save") && request.method === "POST") {
-    //     const form = new formidable.IncomingForm();
-    //     form.parse(request, (err, course, files) => {
-    //         console.log('data', course);
-    //
-    //         // model.save(course).then(
-    //         //     courses => {
-    //         //       redirect(response, '/');
-    //         //     },
-    //         //     error => send(response, error),
-    //         // );
-    //
-    //     });
+  } else if (parts.includes("save") && request.method === "POST") {
+    const form = new formidable.IncomingForm();
+    form.parse(request, (err, course, files) => {
+      let result = saveNewData(course);
+
+      if (result) {
+        redirect(response, "/");
+      } else {
+        // TODO -> what is wrong? message to user
+      }
+    });
+    /**
+     * print the input form
+     */
+  } else if (parts.includes("update") && request.method === "POST") {
+    const form = new formidable.IncomingForm();
+    form.parse(request, (err, course, files) => {
+      let result = updateData(course);
+
+      if (result) {
+        redirect(response, "/");
+      } else {
+        // TODO -> what is wrong? message to user
+      }
+    });
     /**
      * print the input form
      */

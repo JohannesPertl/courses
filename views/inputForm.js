@@ -1,28 +1,27 @@
 function inputForm(unitcode, courses) {
+  //prepare empty form
+  let course = {
+    unitcode: "",
+    name: "",
+    typ: "",
+    modul: "",
+    sws: "",
+    ects: "",
+    semester: "",
+    wahlpflicht: "",
+    studium: "",
+    lehrender: ""
+  };
 
-    //prepare empty form
-    let course = {
-        unitcode: '',
-        name: '',
-        typ: '',
-        modul: '',
-        sws: '',
-        ects: '',
-        semester: '',
-        wahlpflicht: '',
-        studium: '',
-        lehrender: ''
-    };
+  let inputFormHeader = "Neuen Kurs erstellen";
 
-    let inputFormHeader = "Neuen Kurs erstellen";
+  if (unitcode) {
+    course = courses.find(crs => crs.unitcode === parseInt(unitcode));
+    inputFormHeader = "Kurs änderen";
+  }
 
-    if (unitcode) {
-        course = courses.find(crs => crs.unitcode === parseInt(unitcode));
-        inputFormHeader = "Kurs änderen";
-    }
-
-    //build form with javascript
-    const form = `<!DOCTYPE html>
+  //build form with javascript
+  const form = `<!DOCTYPE html>
 <html>
     <head>
         <title>${inputFormHeader}</title>
@@ -66,8 +65,7 @@ function inputForm(unitcode, courses) {
         </form>
     </body>
 </html>`;
-    return form;
-
+  return form;
 }
 
 module.exports = inputForm;
