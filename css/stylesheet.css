@@ -158,14 +158,14 @@ h1 {
   display: inline;
 }
 
-input {
+.search input {
   width: 165px;
   margin-top: 18px;
   float: left;
   margin-left: 5px;
 }
 
-input[type="text"] {
+.search input[type="text"] {
   background-color: #f8f8f8;
   color: #cc0033;
   font-size: 20px;
@@ -350,4 +350,15 @@ button > span {
 /* Print-Icon */
 .image {
   width: 4vh;
+}
+/*input form*/
+.input-form input {
+  border: 1px solid #eee;
+  border-left: 3px solid;
+}
+.input-form input:required {
+  border-left-color: palegreen;
+}
+.input-form input:invalid {
+  border-left-color: #cc0033;
 }
