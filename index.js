@@ -3,7 +3,7 @@ const fs = require("fs");
 
 
 //import data
-let courses = require("./data/testData.json");
+let courses = require("./data/courses.json");
 
 
 
@@ -83,7 +83,7 @@ const server = http.createServer((request, response) => {
     } else if (parts.includes("save-new-course") && request.method === "POST") {
         const form = new formidable.IncomingForm();
         form.parse(request, (err, course, files) => {
-            let courses = addNewCourse(courses, course);
+            courses = addNewCourse(courses, course);
 
             if (courses) {
                 redirect(response, "/");

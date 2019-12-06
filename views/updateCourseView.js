@@ -91,7 +91,7 @@ function updateCourseView(courses) {
             <input type="checkbox" id="wahlpflicht" name="wahlpflicht" value="${course.Wahlpflicht}" >
             <br>               
             Studium:<br>
-            <input type="text" id="stuidum" name="studium" value="${course.Studium}" 
+            <input type="text" id="studium" name="studium" value="${course.Studium}" 
             required pattern="[a-zA-Z]+" title="Nur Buchstaben"> 
             <br>            
             Lehrender:<br>
