@@ -7,7 +7,7 @@ const addNewCourse = require("./functions/addNewCourse.js");
 const changeCourse = require("./functions/changeCourse.js");
 
 //create form view
-const inputForm = require("./views/updateCourseView");
+const updateCourseView = require("./views/updateCourseView");
 
 // load additional module formidable, A Node.js module for parsing form data
 // more details at https://www.npmjs.com/package/formidable
@@ -68,7 +68,7 @@ const server = http.createServer((request, response) => {
      * print the input form
      */
   } else if (parts.includes("new-course")) {
-    send(response, inputForm());
+    send(response, updateCourseView());
 
     /**
      * save input form
