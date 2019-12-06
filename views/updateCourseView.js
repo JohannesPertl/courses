@@ -1,4 +1,5 @@
-function updateCourseView(unitCode, courses) {
+function updateCourseView(courses) {
+
     //prepare empty form
     let course = {
         Unitcode: "",
@@ -15,10 +16,31 @@ function updateCourseView(unitCode, courses) {
 
     let inputFormHeader = "Neuen Kurs erstellen";
 
-    if (unitCode) {
-        course = courses.find(crs => crs.unitcode === parseInt(unitCode));
-        inputFormHeader = "Kurs ändern";
+    // if (unitCode) {
+    //     course = courses.find(crs => crs.Unitcode === parseInt(unitCode));
+    //     inputFormHeader = "Kurs ändern";
+    // }
+
+    //Check for duplicates
+    let existingUnitcodes = "";
+    let existingNames = "";
+    for (let i = 0; i < courses.length; i++) {
+        let course = courses[i];
+        let unitcode = course.Unitcode;
+        let name = course.Name;
+        if (i === 0){
+            existingUnitcodes += "\\b" + unitcode;
+            existingNames += "\\b" + name;
+            continue;
+        }
+        existingUnitcodes += "\\b|" + unitcode + "\\b";
+        existingNames += "\\b|" + name + "\\b";
+
     }
+
+    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+\\b";
+    let regexName = "\\b(?!" + existingNames + ").*\\b";
+
 
     //build form with javascript
     return `<!DOCTYPE html>
@@ -33,11 +55,11 @@ function updateCourseView(unitCode, courses) {
         <form action="/save-new-course" method="POST" class="input-form">
             Unitcode:<br>
             <input type="text" id="unitcode" name="unitcode" value="${course.Unitcode}" 
-            autofocus required pattern="[A-Za-z0-9]+" title="Nur Buchstaben und Zahlen">
+            autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren. Nur Großbuchstaben und Zahlen">
             <br>
             Name:<br>
             <input type="text" id="name" name="name" value="${course.Name}" 
-            required pattern="[A-Za-z0-9-&]+" title="Nur Buchstaben, Zahlen, & und -">
+            required pattern="${regexName}" title="Name darf noch nicht existieren">
             <br>
             Typ:<br>
             <input list="typ" name="typ" value="${course.Typ}" 
@@ -82,5 +104,7 @@ function updateCourseView(unitCode, courses) {
     </body>
 </html>`;
 }
+
+
 
 module.exports = updateCourseView;
