@@ -66,8 +66,7 @@ function updateCourseView(unitCode, courses) {
             required> 
             <br>           
             Wahlpflicht:<br>
-            <input type="checkbox" id="wahlpflicht" name="wahlpflicht" value="${course.wahlpflicht}" 
-            required>
+            <input type="checkbox" id="wahlpflicht" name="wahlpflicht" value="${course.wahlpflicht}" >
             <br>               
             Studium:<br>
             <input type="text" id="stuidum" name="studium" value="${course.studium}" 
