@@ -1,7 +1,7 @@
 /**
  * Global variables
  */
-const JSON_FILE = "data/testData.json";
+const JSON_FILE = "data/courses.json";
 
 /**
  * Calls functions after the page has fully loaded
