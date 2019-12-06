@@ -38,8 +38,8 @@ function updateCourseView(courses) {
 
     }
 
-    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+\\b";
-    let regexName = "\\b(?!" + existingNames + ").*\\b";
+    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
+    let regexName = "\\b(?!" + existingNames + ").*";
 
 
     //build form with javascript
