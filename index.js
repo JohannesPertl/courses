@@ -1,7 +1,13 @@
 const http = require("http");
 const fs = require("fs");
 
-//inport functions
+
+//import data
+let courses = require("./data/testData.json");
+
+
+
+//import functions
 const courseOverview = require("./views/courseOverview.js");
 const addNewCourse = require("./functions/addNewCourse.js");
 const changeCourse = require("./functions/changeCourse.js");
@@ -15,109 +21,110 @@ const formidable = require("formidable");
 
 // entry point for each Request to create matching response
 const server = http.createServer((request, response) => {
-  // get current url for navigation through web application
-  const parts = request.url.split("/");
+    // get current url for navigation through web application
+    const parts = request.url.split("/");
 
-  if (parts.includes("frontend")) {
-    fs.readFile(__dirname + request.url, (err, data) => {
-      if (err) {
-        response.statusCode = 404;
-        response.end();
-      } else {
-        response.end(data);
-      }
-    });
-    /**
-     * return resources from data path
-     */
-  } else if (parts.includes("data")) {
-    fs.readFile(__dirname + request.url, (err, data) => {
-      if (err) {
-        response.statusCode = 404;
-        response.end();
-      } else {
-        response.end(data);
-      }
-    });
-    /**
-     * return resources from css path
-     */
-  } else if (parts.includes("css")) {
-    fs.readFile(__dirname + request.url, (err, data) => {
-      if (err) {
-        response.statusCode = 404;
-        response.end();
-      } else {
-        response.end(data);
-      }
-    });
-    /**
-     * return resources from resources path
-     */
-  } else if (parts.includes("resources")) {
-    fs.readFile(__dirname + request.url, (err, data) => {
-      if (err) {
-        response.statusCode = 404;
-        response.end();
-      } else {
-        response.end(data);
-      }
-    });
+    if (parts.includes("frontend")) {
+        fs.readFile(__dirname + request.url, (err, data) => {
+            if (err) {
+                response.statusCode = 404;
+                response.end();
+            } else {
+                response.end(data);
+            }
+        });
 
-    /**
-     * print the input form
-     */
-  } else if (parts.includes("new-course")) {
-    send(response, updateCourseView());
+        /**
+         * return resources from data path
+         */
+    } else if (parts.includes("data")) {
+        fs.readFile(__dirname + request.url, (err, data) => {
+            if (err) {
+                response.statusCode = 404;
+                response.end();
+            } else {
+                response.end(data);
+            }
+        });
+        /**
+         * return resources from css path
+         */
+    } else if (parts.includes("css")) {
+        fs.readFile(__dirname + request.url, (err, data) => {
+            if (err) {
+                response.statusCode = 404;
+                response.end();
+            } else {
+                response.end(data);
+            }
+        });
+        /**
+         * return resources from resources path
+         */
+    } else if (parts.includes("resources")) {
+        fs.readFile(__dirname + request.url, (err, data) => {
+            if (err) {
+                response.statusCode = 404;
+                response.end();
+            } else {
+                response.end(data);
+            }
+        });
 
-    /**
-     * save input form
-     */
-  } else if (parts.includes("addNewCourse") && request.method === "POST") {
-    const form = new formidable.IncomingForm();
-    form.parse(request, (err, course, files) => {
-      let result = addNewCourse(course);
+        /**
+         * print the input form
+         */
+    } else if (parts.includes("new-course")) {
+        send(response, updateCourseView(courses));
 
-      if (result) {
-        redirect(response, "/");
-      } else {
-        // TODO -> what is wrong? message to user
-      }
-    });
-    /**
-     * print the input form
-     */
-  } else if (parts.includes("changeCourse") && request.method === "POST") {
-    const form = new formidable.IncomingForm();
-    form.parse(request, (err, course, files) => {
-      let result = changeCourse(course);
+        /**
+         * save input form
+         */
+    } else if (parts.includes("save-new-course") && request.method === "POST") {
+        const form = new formidable.IncomingForm();
+        form.parse(request, (err, course, files) => {
+            let courses = addNewCourse(courses, course);
 
-      if (result) {
-        redirect(response, "/");
-      } else {
-        // TODO -> what is wrong? message to user
-      }
-    });
-    /**
-     * print the input form
-     */
-  } else {
-    send(response, courseOverview());
-  }
+            if (courses) {
+                redirect(response, "/");
+            } else {
+                // TODO -> what is wrong? message to user
+            }
+        });
+        /**
+         * print the input form
+         */
+    } else if (parts.includes("changeCourse") && request.method === "POST") {
+        const form = new formidable.IncomingForm();
+        form.parse(request, (err, course, files) => {
+            let result = changeCourse(course);
+
+            if (result) {
+                redirect(response, "/");
+            } else {
+                // TODO -> what is wrong? message to user
+            }
+        });
+        /**
+         * print the input form
+         */
+    } else {
+        send(response, courseOverview());
+    }
 });
 
 // write and send response back to client
 function send(response, responseBody) {
-  response.writeHead(200, { "content-type": "text/html" });
-  response.end(responseBody);
+    response.writeHead(200, {"content-type": "text/html"});
+    response.end(responseBody);
 }
 
 server.listen(8080, () =>
-  console.log("Server and Application is listening to http://localhost:8080")
+    console.log("Server and Application is listening to http://localhost:8080")
 );
 
 // redirecting to 'to'-location
 function redirect(response, to) {
-  response.writeHead(302, { location: "/", "content-type": "text/plain" });
-  response.end("302 Redirecting to /");
+    response.writeHead(302, {location: "/", "content-type": "text/plain"});
+    response.end("302 Redirecting to /");
 }
