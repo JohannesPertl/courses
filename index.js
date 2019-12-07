@@ -2,8 +2,6 @@ const http = require("http");
 const fs = require("fs");
 
 
-//import data
-let courses = require("./data/courses.json");
 
 
 //import functions
@@ -24,6 +22,8 @@ const server = http.createServer((request, response) => {
     // get current url for navigation through web application
     const parts = request.url.split("/");
 
+    //import data
+    let courses = require("./data/courses.json");
     if (parts.includes("frontend")) {
         fs.readFile(__dirname + request.url, (err, data) => {
             if (err) {
