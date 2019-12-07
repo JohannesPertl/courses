@@ -29,11 +29,12 @@ function editCourseView(courses, code) {
         }
         let name = courseExclude.Name;
         if (i === courses.length - 1) {
-            existingNames += name + "\\b";
+            existingNames += name;
             continue;
         }
         existingNames += name + "\\b|";
     }
+    existingNames+=+ "\\b";
     let regexUnitcode = existingUnitcodes;
     let regexName = "\\b(?!" + existingNames + ").*";
 
