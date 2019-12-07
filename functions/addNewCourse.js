@@ -2,7 +2,10 @@ const fs = require('fs');
 
 function addNewCourse(courses, course) {
     console.log(course);
-    course.Wahlpflicht.replace("", "");
+    if (course.Wahlpflicht == null)
+        course.Wahlpflicht = "false";
+    else
+        course.Wahlpflicht = "true";
     courses.push(course);
     console.log("save: " + course.Name);
     let data = JSON.stringify(courses);

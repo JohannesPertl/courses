@@ -80,9 +80,9 @@ function buildTable(jsonObject) {
         "SWS",
         "ECTS",
         "Semester",
-        "Wahlpflicht",
         "Studium",
         "Lehrender",
+        "Wahlpflicht",
         "Editieren"
     ];
     let table = document.createElement("table");

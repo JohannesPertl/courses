@@ -9,9 +9,9 @@ function editCourseView(courses, code) {
         SWS: "",
         ECTS: "",
         Semester: "",
-        Wahlpflicht: "",
         Studium: "",
-        Lehrender: ""
+        Lehrender: "",
+        Wahlpflicht: ""
     };
 
     let inputFormHeader = "Kurs ändern";
@@ -85,10 +85,7 @@ function editCourseView(courses, code) {
             Semester:<br>
             <input type="number" id="semester" min="0" max="20" name="Semester" value="${course.Semester}" 
             required> 
-            <br>           
-            Wahlpflicht:<br>
-            <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
-            <br>               
+            <br>                     
             Studium:<br>
             <input type="text" id="studium" name="Studium" value="${course.Studium}" 
             required pattern="[A-Z]+" title="Nur Großbuchstaben"> 
@@ -97,13 +94,15 @@ function editCourseView(courses, code) {
             <input type="text" id="lehrender" name="Lehrender" value="${course.Lehrender}" 
             required pattern="(.|\\s)*\\S(.|\\s)*" title="Feld darf nicht leer sein">
             <br>   
+             Wahlpflicht:<br>
+            <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
+            <br>   
             <br>    
             <button type="submit">Speichern</button>     
         </form>
     </body>
 </html>`;
 }
-
 
 
 module.exports = editCourseView;
