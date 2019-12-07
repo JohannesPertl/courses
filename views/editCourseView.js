@@ -18,25 +18,22 @@ function editCourseView(courses, code) {
 
     //Check for duplicates
     let existingUnitcodes = "";
-    let existingNames = "";
+    let existingNames = "\\b";
     for (let i = 0; i < courses.length; i++) {
         let courseExclude = courses[i];
         let unitcode = courseExclude.Unitcode;
-        if (unitcode===code){
+        if (unitcode === code) {
             course = courses[i];
             existingUnitcodes += "\\b" + unitcode + "\\b";
-            console.log(course);
             continue;
         }
         let name = courseExclude.Name;
-        if (i === 0){
-            existingNames += "\\b" + name;
+        if (i === courses.length - 1) {
+            existingNames += name + "\\b";
             continue;
         }
-        existingNames += "\\b|" + name + "\\b";
-
+        existingNames += name + "\\b|";
     }
-
     let regexUnitcode = existingUnitcodes;
     let regexName = "\\b(?!" + existingNames + ").*";
 
