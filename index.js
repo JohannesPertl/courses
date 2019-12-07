@@ -6,7 +6,6 @@ const fs = require("fs");
 let courses = require("./data/courses.json");
 
 
-
 //import functions
 const courseOverview = require("./views/courseOverview.js");
 const addNewCourse = require("./functions/addNewCourse.js");
@@ -14,6 +13,7 @@ const changeCourse = require("./functions/changeCourse.js");
 
 //create form view
 const updateCourseView = require("./views/updateCourseView");
+const editCourseView = require("./views/editCourseView");
 
 // load additional module formidable, A Node.js module for parsing form data
 // more details at https://www.npmjs.com/package/formidable
@@ -92,19 +92,14 @@ const server = http.createServer((request, response) => {
             }
         });
         /**
-         * print the input form
+         * print the edit form
          */
-    } else if (parts.includes("changeCourse") && request.method === "POST") {
-        const form = new formidable.IncomingForm();
-        form.parse(request, (err, course, files) => {
-            let result = changeCourse(course);
+    } else if (parts.includes("changeCourse")) {
+        if (parts.length === 3) {
+            let code = parts[2];
+            send(response, editCourseView(courses, code));
+        }
 
-            if (result) {
-                redirect(response, "/");
-            } else {
-                // TODO -> what is wrong? message to user
-            }
-        });
         /**
          * print the input form
          */

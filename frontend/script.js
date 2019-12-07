@@ -82,7 +82,8 @@ function buildTable(jsonObject) {
         "Semester",
         "Wahlpflicht",
         "Studium",
-        "Lehrender"
+        "Lehrender",
+        "Editieren"
     ];
     let table = document.createElement("table");
     table.id = "table";
@@ -115,6 +116,7 @@ function buildTable(jsonObject) {
             cell.setAttribute("data-label", attributes[counter]);
             counter++;
         });
+        row.insertCell().insertAdjacentHTML('afterbegin', addEdit(course));
     }
     document.getElementById("container").appendChild(table);
 }
@@ -133,6 +135,14 @@ function addHeaders(table, keys) {
         cell.className = "table-header";
         cell.setAttribute("scope", "col");
     }
+    let cell = row.appendChild(document.createElement("th"));
+    cell.appendChild(document.createTextNode("Editieren"));
+    cell.className = "table-header";
+    cell.setAttribute("scope", "col");
+}
+
+function addEdit(note) {
+    return`<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/icon_plus.png" alt="edit note" title="edit note" /></a>`;
 }
 
 /**
