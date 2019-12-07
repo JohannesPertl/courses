@@ -43,7 +43,7 @@ function editCourseView(courses, code) {
 <html lang="de-AT">
     <head>
         <title>${inputFormHeader}</title>
-        <link rel="stylesheet" href="css/stylesheet.css" />
+        <link rel="stylesheet" href="../css/stylesheet.css" />
         <meta charset="utf-8">
     </head>
     <body>
