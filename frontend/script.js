@@ -142,7 +142,7 @@ function addHeaders(table, keys) {
 }
 
 function addEdit(note) {
-    return`<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/icon_plus.png" alt="edit note" title="edit note" /></a>`;
+    return`<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/icon_edit.png" alt="edit note" title="edit note" /></a>`;
 }
 
 /**

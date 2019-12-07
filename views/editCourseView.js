@@ -24,20 +24,20 @@ function editCourseView(courses, code) {
         let unitcode = courseExclude.Unitcode;
         if (unitcode===code){
             course = courses[i];
+            existingUnitcodes += "\\b" + unitcode + "\\b";
+            console.log(course);
             continue;
         }
         let name = courseExclude.Name;
         if (i === 0){
-            existingUnitcodes += "\\b" + unitcode;
             existingNames += "\\b" + name;
             continue;
         }
-        existingUnitcodes += "\\b|" + unitcode + "\\b";
         existingNames += "\\b|" + name + "\\b";
 
     }
 
-    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
+    let regexUnitcode = existingUnitcodes;
     let regexName = "\\b(?!" + existingNames + ").*";
 
 
@@ -51,10 +51,10 @@ function editCourseView(courses, code) {
     </head>
     <body>
         <h1>${inputFormHeader}</h1>
-        <form action="/save-new-course" method="POST" class="input-form">
+        <form action="/save-edit-course" method="POST" class="input-form">
             Unitcode:<br>
             <input type="text" id="unitcode" name="Unitcode" value="${course.Unitcode}" 
-            autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren. Nur Großbuchstaben und Zahlen" disabled>
+            autofocus required pattern="${regexUnitcode}" title="Unitcode muss ${course.Unitcode} sein" >
             <br>
             Name:<br>
             <input type="text" id="name" name="Name" value="${course.Name}" 
