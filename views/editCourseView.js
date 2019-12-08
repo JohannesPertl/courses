@@ -119,18 +119,19 @@ function editCourseView(courses, code) {
             <input type="text" id="lehrender" name="Lehrender" value="${course.Lehrender}" 
             required pattern="(.|\\s)*\\S(.|\\s)*" title="Feld darf nicht leer sein">
             </p> 
-            <p> 
+            
              Wahlpflicht:
             <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
-            </p>
+            <br>
             <br>
              <div class="submit">
             <button id="btnCheck">
             <img
               class="image"
-              src="resources/iconCheck.png"
+              src="/resources/iconCheck.png"
               alt="Speichern"
-            /><span>SPEICHERN</span>
+            />
+            <span>SPEICHERN</span>
           </button>
           </a>
         </div>   

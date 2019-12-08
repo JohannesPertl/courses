@@ -65,6 +65,7 @@ function addNewCourseView(courses) {
             <input type="text" id="name" name="Name" value="${course.Name}" 
             required pattern="${regexName}" title="Name darf noch nicht existieren">
             </p>
+            <p>
             Typ:
             <input list="typ" name="Typ" value="${course.Typ}" 
             required pattern="[A-Za-z0-9]+" title="Nur Buchstaben und Zahlen">
@@ -74,6 +75,7 @@ function addNewCourseView(courses) {
             <option value="Vo" /> 
             <option value="Praktikum" /> 
         </datalist> 
+            </p>
             <p>
             Modul:
             <input type="text" id="modul" name="Modul" value="${course.Modul}" 
