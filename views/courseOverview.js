@@ -2,9 +2,7 @@
  * return the html structure for the standard view of the table (index page)
  */
 function printTable() {
-  console.log("print view");
-
-  return `<!DOCTYPE html>
+    return `<!DOCTYPE html>
   <html lang="de-AT">
     <head>
       <meta charset="UTF-8" />
