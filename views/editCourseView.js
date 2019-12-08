@@ -17,25 +17,36 @@ function editCourseView(courses, code) {
     let inputFormHeader = "Kurs ändern";
 
     //Check for duplicates
-    let existingUnitcodes = "";
+    let existingUnitcodes = "\\b";
     let existingNames = "\\b";
+    let found = false;
     for (let i = 0; i < courses.length; i++) {
         let courseExclude = courses[i];
         let unitcode = courseExclude.Unitcode;
         if (unitcode === code) {
+            found = true;
             course = courses[i];
-            existingUnitcodes += "\\b" + unitcode + "\\b";
             continue;
         }
         let name = courseExclude.Name;
-        if (i === courses.length - 1) {
+        if (i === courses.length - 2 && !found) {
             existingNames += name;
+            existingUnitcodes += unitcode;
             continue;
         }
+        if (i === courses.length - 1) {
+            existingNames += name;
+            existingUnitcodes += unitcode;
+            continue;
+        }
+        existingUnitcodes += unitcode + "\\b|";
         existingNames += name + "\\b|";
     }
-    existingNames+=+ "\\b";
-    let regexUnitcode = existingUnitcodes;
+    console.log(existingUnitcodes);
+    console.log(existingNames);
+    existingUnitcodes += "\\b";
+    existingNames += "\\b";
+    let regexUnitcode = "\\b(?!" + existingUnitcodes + ").*";
     let regexName = "\\b(?!" + existingNames + ").*";
 
 
@@ -52,7 +63,7 @@ function editCourseView(courses, code) {
         <form action="/save-edit-course" method="POST" class="input-form">
             Unitcode:<br>
             <input type="text" id="unitcode" name="Unitcode" value="${course.Unitcode}" 
-            autofocus required pattern="${regexUnitcode}" title="Unitcode muss ${course.Unitcode} sein" >
+            autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren" >
             <br>
             Name:<br>
             <input type="text" id="name" name="Name" value="${course.Name}" 
