@@ -38,11 +38,7 @@ function printTable() {
             onkeyup="SearchTable()"
           />
         </div>
-        
-        <div class="">
-        <a href="/new-course"><img class="image" src="/resources/icon_plus.png" alt="neuen Kurs anlegen" title="Neuen Kurs Anlegen" />Neuen Kurs Anlegen</a>
-        </div>
-        
+       
         <div class="row">
           <div class="col-12 col-s-12">
             <div id="container" class="table-container"></div>
@@ -50,7 +46,19 @@ function printTable() {
         </div>
         <!-- close container -->
         </div>
-
+      
+         <div class="add">
+          <a href="/new-course"><button id="btnAdd">
+            <img
+              class="image"
+              src="resources/iconAdd.png"
+              alt="Hinzufügen"
+            /><span>NEUER KURS</span>
+          </button>
+          </a>
+        </div>
+        
+        
 
       <footer>
         <div class="print">

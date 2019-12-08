@@ -14,7 +14,7 @@ function addNewCourseView(courses) {
         Wahlpflicht: ""
     };
 
-    let inputFormHeader = "Neuen Kurs erstellen";
+    let inputFormHeader = "Neuer Kurs";
 
 
     //Check for duplicates
@@ -47,17 +47,25 @@ function addNewCourseView(courses) {
         <meta charset="utf-8">
     </head>
     <body>
+     <header>
+        <a href="https://www.fh-joanneum.at/" target="_blank">
+          <img class="fh-logo" src="/resources/FhLogo.png" alt="Logo"
+        /></a>
         <h1>${inputFormHeader}</h1>
+      </header>
+    
         <form action="/save-new-course" method="POST" class="input-form">
-            Unitcode:<br>
+            <p>
+            Unitcode:
             <input type="text" id="unitcode" name="Unitcode" value="${course.Unitcode}" 
             autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren. Nur Großbuchstaben und Zahlen">
-            <br>
-            Name:<br>
+            </p>
+            <p>
+            Name:
             <input type="text" id="name" name="Name" value="${course.Name}" 
             required pattern="${regexName}" title="Name darf noch nicht existieren">
-            <br>
-            Typ:<br>
+            </p>
+            Typ:
             <input list="typ" name="Typ" value="${course.Typ}" 
             required pattern="[A-Za-z0-9]+" title="Nur Buchstaben und Zahlen">
             <datalist id="typ"> 
@@ -66,36 +74,50 @@ function addNewCourseView(courses) {
             <option value="Vo" /> 
             <option value="Praktikum" /> 
         </datalist> 
-            <br>
-            Modul:<br>
+            <p>
+            Modul:
             <input type="text" id="modul" name="Modul" value="${course.Modul}" 
             required pattern="(.|\\s)*\\S(.|\\s)*" title="Feld darf nicht leer sein">   
-            <br>         
-            SWS:<br>
+            </p>         
+            SWS:
             <input type="number" id="sws" min="0" max="100" name="SWS" value="${course.SWS}" 
             required>
-            <br>            
-            ECTS:<br>
+            <p>            
+            ECTS:
             <input type="number" id="ects" min="0" max="30" name="ECTS" value="${course.ECTS}" 
             required>
-            <br>            
-            Semester:<br>
+            </p> 
+            <p>          
+            Semester:
             <input type="number" id="semester" min="0" max="20" name="Semester" value="${course.Semester}" 
             required> 
-            <br>                                   
-            Studium:<br>
+            </p>                                  
+            Studium:
             <input type="text" id="studium" name="Studium" value="${course.Studium}" 
             required pattern="[A-Z]+" title="Nur Großbuchstaben"> 
-            <br>            
-            Lehrender:<br>
+            <p>           
+            Lehrender:
             <input type="text" id="lehrender" name="Lehrender" value="${course.Lehrender}" 
             required pattern="(.|\\s)*\\S(.|\\s)*" title="Feld darf nicht leer sein">
-            <br>  
-            Wahlpflicht:<br>
+            </p>  
+            Wahlpflicht:
             <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
             <br>   
             <br>    
-            <button type="submit">Speichern</button>     
+           
+            
+            <div class="submit">
+            <button id="btnCheck">
+             <img
+              class="image"
+              src="resources/iconCheck.png"
+              alt="Speichern"
+            />
+           <span>SPEICHERN</span>
+          </button>
+          </a>
+        </div>
+              
         </form>
     </body>
 </html>`;
