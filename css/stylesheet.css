@@ -184,6 +184,7 @@ table {
     table-layout: fixed;
     font-family: "Helvetica", sans-serif;
     font-size: 14px;
+    margin-bottom: 3%;
 }
 
 table caption {
@@ -346,6 +347,7 @@ button > span {
     position: fixed;
     right: 0;
     bottom: 0;
+    float:right;
 }
 
 /* Print-Icon */
@@ -357,13 +359,11 @@ button > span {
 
     background-color: #cc0033;
     cursor: pointer; /* Mouse pointer on hover */
-    margin-top: 0;
-    margin-bottom: 2%;
-    border: 0.2vh solid #cc0033;
+    margin: 5px;
+
+    border: 0.2vh solid;
     border-radius: 1.5vh;
-    padding-right: 5%;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding: 13px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -372,6 +372,12 @@ button > span {
     font-size: large;
     font-family: Helvetica, sans-serif;
     font-weight: bold;
+    /* sticky button in bottom right */
+    position: fixed;
+    right: 10%;
+
+    bottom: 0;
+    float:right;
 
 }
 
@@ -434,7 +440,7 @@ a:visited {
     font-size: medium;
     text-align: right;
     box-sizing: content-box;
-    width: 270px;
+    width: 18vw;
 
 
 }
