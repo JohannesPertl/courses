@@ -60,7 +60,7 @@ function editCourseView(courses, code) {
     </head>
     <body>
         <h1>${inputFormHeader}</h1>
-        <form action="/save-edit-course" method="POST" class="input-form">
+        <form action="/save-edit-course/${code}" method="POST" class="input-form">
             Unitcode:<br>
             <input type="text" id="unitcode" name="Unitcode" value="${course.Unitcode}" 
             autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren" >

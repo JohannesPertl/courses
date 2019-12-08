@@ -106,12 +106,15 @@ const server = http.createServer((request, response) => {
     } else if (parts.includes("save-edit-course") && request.method === "POST") {
         const form = new formidable.IncomingForm();
         form.parse(request, (err, course, files) => {
-            courses = changeCourse(courses, course);
+            if (parts.length === 3) {
+                let code = parts[2];
+                courses = changeCourse(courses, course, code);
+                if (courses) {
+                    redirect(response, "/");
+                } else {
+                    // TODO -> what is wrong? message to user
+                }
 
-            if (courses) {
-                redirect(response, "/");
-            } else {
-                // TODO -> what is wrong? message to user
             }
         });
         /**
