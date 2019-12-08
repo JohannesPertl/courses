@@ -1,4 +1,4 @@
-function updateCourseView(courses) {
+function addNewCourseView(courses) {
 
     //prepare empty form
     let course = {
@@ -16,10 +16,6 @@ function updateCourseView(courses) {
 
     let inputFormHeader = "Neuen Kurs erstellen";
 
-    // if (unitCode) {
-    //     course = courses.find(crs => crs.Unitcode === parseInt(unitCode));
-    //     inputFormHeader = "Kurs ändern";
-    // }
 
     //Check for duplicates
     let existingUnitcodes = "";
@@ -107,4 +103,4 @@ function updateCourseView(courses) {
 
 
 
-module.exports = updateCourseView;
+module.exports = addNewCourseView;

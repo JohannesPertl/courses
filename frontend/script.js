@@ -83,7 +83,7 @@ function buildTable(jsonObject) {
         "Studium",
         "Lehrender",
         "Wahlpflicht",
-        "Editieren"
+        ""
     ];
     let table = document.createElement("table");
     table.id = "table";
@@ -136,7 +136,7 @@ function addHeaders(table, keys) {
         cell.setAttribute("scope", "col");
     }
     let cell = row.appendChild(document.createElement("th"));
-    cell.appendChild(document.createTextNode("Editieren"));
+    cell.appendChild(document.createTextNode(""));
     cell.className = "table-header";
     cell.setAttribute("scope", "col");
 }

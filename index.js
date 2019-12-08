@@ -10,7 +10,7 @@ const addNewCourse = require("./functions/addNewCourse.js");
 const changeCourse = require("./functions/changeCourse.js");
 
 //create form view
-const updateCourseView = require("./views/updateCourseView");
+const updateCourseView = require("./views/addNewCourseView");
 const editCourseView = require("./views/editCourseView");
 
 // load additional module formidable, A Node.js module for parsing form data
