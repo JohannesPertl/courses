@@ -131,7 +131,11 @@ function send(response, responseBody) {
     response.end(responseBody);
 }
 
-server.listen(process.env.PORT, () =>
+let port = process.env.PORT;
+if (port == null || port === "") {
+    port = 8080;
+}
+server.listen(port, () =>
     console.log("Server and Application is listening to http://localhost:8080")
 );
 
