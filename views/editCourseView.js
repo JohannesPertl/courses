@@ -71,7 +71,7 @@ function editCourseView(courses, code) {
             <p>
             Unitcode:
             <input type="text" id="unitcode" name="Unitcode" value="${course.Unitcode}" 
-            autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren" >
+            autofocus required pattern="${regexUnitcode}" title="Unitcode darf noch nicht existieren. Nur Großbuchstaben und Zahlen" >
             </p>
             <p>
             Name:
