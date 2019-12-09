@@ -46,7 +46,7 @@ function editCourseView(courses, code) {
     console.log(existingNames);
     existingUnitcodes += "\\b";
     existingNames += "\\b";
-    let regexUnitcode = "\\b(?!" + existingUnitcodes + ").*";
+    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
     let regexName = "\\b(?!" + existingNames + ").*";
 
 
