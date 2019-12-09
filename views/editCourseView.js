@@ -86,7 +86,7 @@ function editCourseView(courses, code) {
             <option value="Se" > 
             <option value="Vo" > 
             <option value="Praktikum" > 
-        </datalist> 
+            </datalist> 
             </p>
             <p>
             Modul:
@@ -121,8 +121,7 @@ function editCourseView(courses, code) {
             
              Wahlpflicht:
             <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
-            <br>
-            <br>
+           </form>
              <div class="print">
             <button id="btnCheck">
             <img
@@ -132,12 +131,12 @@ function editCourseView(courses, code) {
             />
             <span>SPEICHERN</span>
           </button>
-          </a>
+        
         </div>  
          <div class = "col-8"> </div>
         </div> 
               
-        </form>
+        
        </div>
        </div>
     </body>
