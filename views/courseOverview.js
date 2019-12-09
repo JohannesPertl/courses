@@ -45,7 +45,7 @@ function printTable() {
         <!-- close container -->
         </div>
       
-         <div class="add">
+         <div class="print">
           <a href="/new-course"><button id="btnAdd">
             <img
               class="image"
