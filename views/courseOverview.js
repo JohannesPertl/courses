@@ -2,7 +2,7 @@
  * return the html structure for the standard view of the table (index page)
  */
 function printTable() {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
   <html lang="de-AT">
     <head>
       <meta charset="UTF-8" />
@@ -45,7 +45,12 @@ function printTable() {
         <!-- close container -->
         </div>
       
-         <div class="print">
+         
+        
+        
+
+      <footer>
+      <div class="print">
           <a href="/new-course"><button id="btnAdd">
             <img
               class="image"
@@ -55,10 +60,6 @@ function printTable() {
           </button>
           </a>
         </div>
-        
-        
-
-      <footer>
         <div class="print">
           <button id="btnPrint">
             <img

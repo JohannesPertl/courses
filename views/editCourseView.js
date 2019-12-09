@@ -1,60 +1,59 @@
 function editCourseView(courses, code) {
+  //prepare form
+  let course = {
+    Unitcode: "",
+    Name: "",
+    Typ: "",
+    Modul: "",
+    SWS: "",
+    ECTS: "",
+    Semester: "",
+    Studium: "",
+    Lehrender: "",
+    Wahlpflicht: ""
+  };
 
-    //prepare form
-    let course = {
-        Unitcode: "",
-        Name: "",
-        Typ: "",
-        Modul: "",
-        SWS: "",
-        ECTS: "",
-        Semester: "",
-        Studium: "",
-        Lehrender: "",
-        Wahlpflicht: ""
-    };
+  let inputFormHeader = "Kurs ändern";
 
-    let inputFormHeader = "Kurs ändern";
-
-    //Check for duplicates
-    let existingUnitcodes = "\\b";
-    let existingNames = "\\b";
-    let found = false;
-    for (let i = 0; i < courses.length; i++) {
-        let courseExclude = courses[i];
-        let unitcode = courseExclude.Unitcode;
-        if (unitcode === code) {
-            found = true;
-            course = courses[i];
-            continue;
-        }
-        let name = courseExclude.Name;
-        if (i === courses.length - 2 && !found) {
-            existingNames += name;
-            existingUnitcodes += unitcode;
-            continue;
-        }
-        if (i === courses.length - 1) {
-            existingNames += name;
-            existingUnitcodes += unitcode;
-            continue;
-        }
-        existingUnitcodes += unitcode + "\\b|";
-        existingNames += name + "\\b|";
+  //Check for duplicates
+  let existingUnitcodes = "\\b";
+  let existingNames = "\\b";
+  let found = false;
+  for (let i = 0; i < courses.length; i++) {
+    let courseExclude = courses[i];
+    let unitcode = courseExclude.Unitcode;
+    if (unitcode === code) {
+      found = true;
+      course = courses[i];
+      continue;
     }
-    existingUnitcodes += "\\b";
-    existingNames += "\\b";
-    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
-    let regexName = "\\b(?!" + existingNames + ").*";
+    let name = courseExclude.Name;
+    if (i === courses.length - 2 && !found) {
+      existingNames += name;
+      existingUnitcodes += unitcode;
+      continue;
+    }
+    if (i === courses.length - 1) {
+      existingNames += name;
+      existingUnitcodes += unitcode;
+      continue;
+    }
+    existingUnitcodes += unitcode + "\\b|";
+    existingNames += name + "\\b|";
+  }
+  existingUnitcodes += "\\b";
+  existingNames += "\\b";
+  let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
+  let regexName = "\\b(?!" + existingNames + ").*";
 
-
-    //build form with javascript
-    return `<!DOCTYPE html>
+  //build form with javascript
+  return `<!DOCTYPE html>
 <html lang="de-AT">
     <head>
         <title>${inputFormHeader}</title>
         <link rel="stylesheet" href="../css/stylesheet.css" />
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
     </head>
     <body>
     <header>
@@ -83,10 +82,10 @@ function editCourseView(courses, code) {
             <input list="typ" name="Typ" value="${course.Typ}" 
             required pattern="[A-Za-z0-9]+" title="Nur Buchstaben und Zahlen">
             <datalist id="typ"> 
-            <option value="iL" /> 
-            <option value="Se" /> 
-            <option value="Vo" /> 
-            <option value="Praktikum" /> 
+            <option value="iL" > 
+            <option value="Se" > 
+            <option value="Vo" > 
+            <option value="Praktikum" > 
         </datalist> 
             </p>
             <p>
@@ -144,6 +143,5 @@ function editCourseView(courses, code) {
     </body>
 </html>`;
 }
-
 
 module.exports = editCourseView;

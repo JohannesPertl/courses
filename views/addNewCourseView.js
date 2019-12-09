@@ -1,50 +1,47 @@
 function addNewCourseView(courses) {
+  //prepare empty form
+  let course = {
+    Unitcode: "",
+    Name: "",
+    Typ: "",
+    Modul: "",
+    SWS: "",
+    ECTS: "",
+    Semester: "",
+    Studium: "",
+    Lehrender: "",
+    Wahlpflicht: ""
+  };
 
-    //prepare empty form
-    let course = {
-        Unitcode: "",
-        Name: "",
-        Typ: "",
-        Modul: "",
-        SWS: "",
-        ECTS: "",
-        Semester: "",
-        Studium: "",
-        Lehrender: "",
-        Wahlpflicht: ""
-    };
+  let inputFormHeader = "Neuer Kurs";
 
-    let inputFormHeader = "Neuer Kurs";
-
-
-    //Check for duplicates
-    let existingUnitcodes = "";
-    let existingNames = "";
-    for (let i = 0; i < courses.length; i++) {
-        let course = courses[i];
-        let unitcode = course.Unitcode;
-        let name = course.Name;
-        if (i === 0){
-            existingUnitcodes += "\\b" + unitcode;
-            existingNames += "\\b" + name;
-            continue;
-        }
-        existingUnitcodes += "\\b|" + unitcode + "\\b";
-        existingNames += "\\b|" + name + "\\b";
-
+  //Check for duplicates
+  let existingUnitcodes = "";
+  let existingNames = "";
+  for (let i = 0; i < courses.length; i++) {
+    let course = courses[i];
+    let unitcode = course.Unitcode;
+    let name = course.Name;
+    if (i === 0) {
+      existingUnitcodes += "\\b" + unitcode;
+      existingNames += "\\b" + name;
+      continue;
     }
+    existingUnitcodes += "\\b|" + unitcode + "\\b";
+    existingNames += "\\b|" + name + "\\b";
+  }
 
-    let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
-    let regexName = "\\b(?!" + existingNames + ").*";
+  let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
+  let regexName = "\\b(?!" + existingNames + ").*";
 
-
-    //build form with javascript
-    return `<!DOCTYPE html>
+  //build form with javascript
+  return `<!DOCTYPE html>
 <html lang="de-AT">
     <head>
         <title>${inputFormHeader}</title>
         <link rel="stylesheet" href="../css/stylesheet.css" />
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
     </head>
     <body>
      <header>
@@ -72,10 +69,10 @@ function addNewCourseView(courses) {
             <input list="typ" name="Typ" value="${course.Typ}" 
             required pattern="[A-Za-z0-9]+" title="Nur Buchstaben und Zahlen">
             <datalist id="typ"> 
-            <option value="iL" /> 
-            <option value="Se" /> 
-            <option value="Vo" /> 
-            <option value="Praktikum" /> 
+            <option value="iL" > 
+            <option value="Se" > 
+            <option value="Vo" > 
+            <option value="Praktikum" > 
         </datalist> 
             </p>
             <p>
@@ -95,10 +92,12 @@ function addNewCourseView(courses) {
             Semester:
             <input type="number" id="semester" min="0" max="20" name="Semester" value="${course.Semester}" 
             required> 
-            </p>                                  
+            </p>
+            <p>                                  
             Studium:
             <input type="text" id="studium" name="Studium" value="${course.Studium}" 
             required pattern="[A-Z]+" title="Nur Großbuchstaben"> 
+            </p>           
             <p>           
             Lehrender:
             <input type="text" id="lehrender" name="Lehrender" value="${course.Lehrender}" 
@@ -129,7 +128,5 @@ function addNewCourseView(courses) {
     </body>
 </html>`;
 }
-
-
 
 module.exports = addNewCourseView;
