@@ -53,7 +53,9 @@ function addNewCourseView(courses) {
         /></a>
         <h1>${inputFormHeader}</h1>
       </header>
-    
+    <div class = "container">
+    <div class = "row"> 
+        <div class = "col-4 col-s-12">
         <form action="/save-new-course" method="POST" class="input-form">
             <p>
             Unitcode:
@@ -108,7 +110,7 @@ function addNewCourseView(courses) {
             <br>    
            
             
-            <div class="submit">
+            <div class="print">
             <button id="btnCheck">
              <img
               class="image"
@@ -118,9 +120,12 @@ function addNewCourseView(courses) {
            <span>SPEICHERN</span>
           </button>
           </a>
+          </div>
+          <div class = "col-8"> </div>
         </div>
               
-        </form>
+        </form></div>
+        </div>
     </body>
 </html>`;
 }

@@ -64,7 +64,9 @@ function editCourseView(courses, code) {
         <h1>${inputFormHeader}</h1>
      </header>
      
-     
+     <div class = "container">
+    <div class = "row"> 
+        <div class = "col-4 col-s-12">
         <form action="/save-edit-course/${code}" method="POST" class="input-form">
             <p>
             Unitcode:
@@ -122,7 +124,7 @@ function editCourseView(courses, code) {
             <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
             <br>
             <br>
-             <div class="submit">
+             <div class="print">
             <button id="btnCheck">
             <img
               class="image"
@@ -132,10 +134,13 @@ function editCourseView(courses, code) {
             <span>SPEICHERN</span>
           </button>
           </a>
-        </div>   
+        </div>  
+         <div class = "col-8"> </div>
+        </div> 
               
         </form>
-       
+       </div>
+       </div>
     </body>
 </html>`;
 }
