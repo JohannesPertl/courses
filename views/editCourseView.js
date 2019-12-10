@@ -46,6 +46,12 @@ function editCourseView(courses, code) {
   let regexUnitcode = "\\b(?!" + existingUnitcodes + ")[A-Z0-9]+";
   let regexName = "\\b(?!" + existingNames + ").*";
 
+  // set a var for the Wahlpflicht checkbox
+  let wahlpflichtChecked = "";
+  if (course.Wahlpflicht === "true") {
+    wahlpflichtChecked = "checked";
+  }
+
   //build form with javascript
   return `<!DOCTYPE html>
 <html lang="de-AT">
@@ -120,7 +126,7 @@ function editCourseView(courses, code) {
             </p> 
             
              Wahlpflicht:
-            <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
+            <input ${wahlpflichtChecked} type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
             <div class="print">
             <button id="btnCheck">
             <img
