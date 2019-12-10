@@ -121,18 +121,18 @@ function editCourseView(courses, code) {
             
              Wahlpflicht:
             <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
-           </form>
-             <div class="print">
+            <div class="print">
             <button id="btnCheck">
             <img
-              class="image"
+            class="image"
               src="/resources/iconCheck.png"
               alt="Speichern"
-            />
-            <span>SPEICHERN</span>
-          </button>
+              />
+              <span>SPEICHERN</span>
+              </button>
+              </div>  
+              </form>
         
-        </div>  
          <div class = "col-8"> </div>
         </div> 
               

@@ -106,20 +106,19 @@ function addNewCourseView(courses) {
                 Wahlpflicht:
                 <input type="checkbox" id="wahlpflicht" name="Wahlpflicht" value="${course.Wahlpflicht}" >
                 </p>
-               </form>
-           
-            
-    <div class="print">
-        <button id="btnCheck">
-            <img
-              class="image"
-              src="resources/iconCheck.png"
-              alt="Speichern"
-            />
-           <span>SPEICHERN</span>
-        </button>
-       
-    </div>
+                
+                <div class="print">
+                <button id="btnCheck">
+                <img
+                class="image"
+                src="resources/iconCheck.png"
+                alt="Speichern"
+                />
+                <span>SPEICHERN</span>
+                </button>
+                </div>
+                </form>
+                
    <div class = "col-8"> </div>
         </div>
               
