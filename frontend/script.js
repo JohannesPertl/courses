@@ -97,6 +97,11 @@ function buildTable(jsonObject) {
 
     let row = tbody.insertRow();
     let counter = 0;
+    // insert checkbox to select row
+    let cell = row.insertCell();
+    cell.setAttribute("class", "print");
+    cell.insertAdjacentHTML("afterbegin", addSelectCheckbox(course));
+
     Object.keys(course).forEach(function(k) {
       let cell = row.insertCell();
       cell.appendChild(document.createTextNode(course[k]));
@@ -116,7 +121,7 @@ function buildTable(jsonObject) {
       cell.setAttribute("data-label", attributes[counter]);
       counter++;
     });
-    let cell = row.insertCell();
+    cell = row.insertCell();
     cell.setAttribute("class", "print");
     // cell.appendChild(addEdit(course));
     cell.insertAdjacentHTML("afterbegin", addEdit(course));
@@ -132,13 +137,15 @@ function buildTable(jsonObject) {
 function addHeaders(table, keys) {
   let header = table.createTHead();
   let row = header.insertRow();
+  let cell = row.appendChild(document.createElement("th"));
+  cell.appendChild(document.createTextNode(""));
   for (let i = 0; i < keys.length; i++) {
-    let cell = row.appendChild(document.createElement("th"));
+    cell = row.appendChild(document.createElement("th"));
     cell.appendChild(document.createTextNode(keys[i]));
     cell.className = "table-header";
     cell.setAttribute("scope", "col");
   }
-  let cell = row.appendChild(document.createElement("th"));
+  cell = row.appendChild(document.createElement("th"));
   cell.appendChild(document.createTextNode(""));
   cell.className = "table-header";
   cell.setAttribute("scope", "col");
@@ -146,6 +153,11 @@ function addHeaders(table, keys) {
 
 function addEdit(note) {
   return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/iconEditRed.png" alt="edit note" title="edit note" /></a>`;
+}
+
+function addSelectCheckbox(note) {
+  return `<input type="checkbox" class="selectCheckbox" id="${note.Unitcode}"/>`;
+  // return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/iconEditRed.png" alt="edit note" title="edit note" /></a>`;
 }
 
 /**
