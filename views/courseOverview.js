@@ -2,7 +2,7 @@
  * return the html structure for the standard view of the table (index page)
  */
 function printTable() {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
   <html lang="de-AT">
     <head>
       <meta charset="UTF-8" />
@@ -39,7 +39,10 @@ function printTable() {
        
         <div class="row">
           <div class="col-12 col-s-12">
+          <form action="/delete-courses" method="POST">
+          <button type=submit>delete</button>
             <div id="container" class="table-container"></div>
+          </form>
           </div>
         </div>
         <!-- close container -->

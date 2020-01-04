@@ -5,6 +5,7 @@ const fs = require("fs");
 const courseOverview = require("./views/courseOverview.js");
 const addNewCourse = require("./functions/addNewCourse.js");
 const changeCourse = require("./functions/changeCourse.js");
+const deleteCourses = require("./functions/deleteCourses.js");
 
 //create form view
 const updateCourseView = require("./views/addNewCourseView");
@@ -89,6 +90,17 @@ const server = http.createServer((request, response) => {
       } else {
         // TODO -> what is wrong? message to user
       }
+    });
+    /**
+     * delete selected courses
+     */
+  } else if (parts.includes("delete-courses") && request.method === "POST") {
+    const form = new formidable.IncomingForm();
+    form.parse(request, (err, course, files) => {
+      // console.log("delete" + JSON.stringify(course));
+      result = deleteCourses(course);
+
+      redirect(response, "/");
     });
     /**
      * print the edit form

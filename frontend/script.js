@@ -152,12 +152,11 @@ function addHeaders(table, keys) {
 }
 
 function addEdit(note) {
-  return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/iconEditRed.png" alt="edit note" title="edit note" /></a>`;
+  return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/iconEditRed.png" alt="edit course" title="edit course" /></a>`;
 }
 
 function addSelectCheckbox(note) {
-  return `<input type="checkbox" class="selectCheckbox" id="${note.Unitcode}"/>`;
-  // return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/iconEditRed.png" alt="edit note" title="edit note" /></a>`;
+  return `<input type="checkbox" id="delete-checkbox" name="id" value="${note.Unitcode}" >`;
 }
 
 /**
