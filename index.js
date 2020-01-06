@@ -122,7 +122,7 @@ const server = http.createServer((request, response) => {
     form.parse(request, (err, course, files) => {
       if (parts.length === 3) {
         let unitCode = parts[2];
-        courses = changeCourse(courses, course, unitCode);
+        courses = changeCourse(courses, unitCode);
         if (courses) {
           redirect(response, "/");
         } else {
