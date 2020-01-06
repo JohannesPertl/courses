@@ -96,8 +96,8 @@ const server = http.createServer((request, response) => {
      */
   } else if (parts.includes("delete-courses")) {
     if (parts.length === 3) {
-      let id = parts[2];
-      result = deleteCourses(id);
+      let unitCode = parts[2];
+      let result = deleteCourses(courses, unitCode);
       if (result) {
         redirect(response, "/");
       } else {
@@ -110,8 +110,8 @@ const server = http.createServer((request, response) => {
      */
   } else if (parts.includes("changeCourse")) {
     if (parts.length === 3) {
-      let code = parts[2];
-      send(response, editCourseView(courses, code));
+      let unitCode = parts[2];
+      send(response, editCourseView(courses, unitCode));
     }
 
     /**
@@ -121,8 +121,8 @@ const server = http.createServer((request, response) => {
     const form = new formidable.IncomingForm();
     form.parse(request, (err, course, files) => {
       if (parts.length === 3) {
-        let code = parts[2];
-        courses = changeCourse(courses, course, code);
+        let unitCode = parts[2];
+        courses = changeCourse(courses, course, unitCode);
         if (courses) {
           redirect(response, "/");
         } else {
