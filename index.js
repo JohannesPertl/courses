@@ -94,14 +94,17 @@ const server = http.createServer((request, response) => {
     /**
      * delete selected courses
      */
-  } else if (parts.includes("delete-courses") && request.method === "POST") {
-    const form = new formidable.IncomingForm();
-    form.parse(request, (err, course, files) => {
-      // console.log("delete" + JSON.stringify(course));
-      result = deleteCourses(course);
-
-      redirect(response, "/");
-    });
+  } else if (parts.includes("delete-courses")) {
+    if (parts.length === 3) {
+      let id = parts[2];
+      result = deleteCourses(id);
+      if (result) {
+        redirect(response, "/");
+      } else {
+        // error
+        redirect(response, "/");
+      }
+    }
     /**
      * print the edit form
      */

@@ -215,16 +215,16 @@ table th {
 }
 
 /* change the font size of the table */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1300px) {
   table {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
 /* change the font size of the table */
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1000px) {
   table {
-    font-size: 11px;
+    font-size: 10px;
   }
 
   h1 {
@@ -233,10 +233,14 @@ table th {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   h1 {
     font-size: 1.7em;
     margin-left: 3%;
+  }
+
+  table {
+    font-size: 14px;
   }
 
   table {
@@ -448,4 +452,14 @@ a:visited {
 
 .input-form input:invalid {
   border: 2px solid #cc0033;
+}
+
+.deleteButton {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  border-style: solid;
+  background-image: url("../resources/iconDelete.png");
+  background-repeat: no-repeat;
+  cursor: pointer;
 }

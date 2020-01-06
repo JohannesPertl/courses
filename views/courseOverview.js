@@ -9,6 +9,7 @@ function printTable() {
       <meta name="viewport" content="width=device-width,initial-scale=1" />
       <link rel="stylesheet" href="css/stylesheet.css" />
       <script src="frontend/script.js" async></script>
+      <script src="frontend/confirmDelete.js" async></script>
       <title>FH Joanneum - Courses</title>
       </head>
   
@@ -39,10 +40,7 @@ function printTable() {
        
         <div class="row">
           <div class="col-12 col-s-12">
-          <form action="/delete-courses" method="POST">
-          <button type=submit>delete</button>
             <div id="container" class="table-container"></div>
-          </form>
           </div>
         </div>
         <!-- close container -->

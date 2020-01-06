@@ -98,9 +98,9 @@ function buildTable(jsonObject) {
     let row = tbody.insertRow();
     let counter = 0;
     // insert checkbox to select row
-    let cell = row.insertCell();
-    cell.setAttribute("class", "print");
-    cell.insertAdjacentHTML("afterbegin", addSelectCheckbox(course));
+    // let cell = row.insertCell();
+    // cell.setAttribute("class", "print");
+    // cell.insertAdjacentHTML("afterbegin", addSelectCheckbox(course));
 
     Object.keys(course).forEach(function(k) {
       let cell = row.insertCell();
@@ -125,6 +125,9 @@ function buildTable(jsonObject) {
     cell.setAttribute("class", "print");
     // cell.appendChild(addEdit(course));
     cell.insertAdjacentHTML("afterbegin", addEdit(course));
+    cell = row.insertCell();
+    cell.setAttribute("class", "print");
+    cell.insertAdjacentHTML("afterbegin", addDelete(course));
   }
   document.getElementById("container").appendChild(table);
 }
@@ -137,14 +140,18 @@ function buildTable(jsonObject) {
 function addHeaders(table, keys) {
   let header = table.createTHead();
   let row = header.insertRow();
-  let cell = row.appendChild(document.createElement("th"));
-  cell.appendChild(document.createTextNode(""));
+  // let cell = row.appendChild(document.createElement("th"));
+  // cell.appendChild(document.createTextNode(""));
   for (let i = 0; i < keys.length; i++) {
-    cell = row.appendChild(document.createElement("th"));
+    let cell = row.appendChild(document.createElement("th"));
     cell.appendChild(document.createTextNode(keys[i]));
     cell.className = "table-header";
     cell.setAttribute("scope", "col");
   }
+  let cell = row.appendChild(document.createElement("th"));
+  cell.appendChild(document.createTextNode(""));
+  cell.className = "table-header";
+  cell.setAttribute("scope", "col");
   cell = row.appendChild(document.createElement("th"));
   cell.appendChild(document.createTextNode(""));
   cell.className = "table-header";
@@ -155,8 +162,8 @@ function addEdit(note) {
   return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/iconEditRed.png" alt="edit course" title="edit course" /></a>`;
 }
 
-function addSelectCheckbox(note) {
-  return `<input type="checkbox" id="delete-checkbox" name="id" value="${note.Unitcode}" >`;
+function addDelete(note) {
+  return `<button onclick="confirmDelete('${note.Unitcode}')" class="deleteButton"/>`;
 }
 
 /**
