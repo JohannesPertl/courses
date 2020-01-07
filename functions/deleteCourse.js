@@ -1,5 +1,5 @@
 const fs = require("fs");
-function deleteCourses(courses, unitCode) {
+function deleteCourse(courses, unitCode) {
 
   if (unitCode.length < 1) {
     return false;
@@ -21,4 +21,4 @@ function deleteCourses(courses, unitCode) {
 }
 
 
-module.exports = deleteCourses;
+module.exports = deleteCourse;

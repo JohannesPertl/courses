@@ -5,7 +5,7 @@ const fs = require("fs");
 const courseOverview = require("./views/courseOverview.js");
 const addNewCourse = require("./functions/addNewCourse.js");
 const changeCourse = require("./functions/changeCourse.js");
-const deleteCourses = require("./functions/deleteCourses.js");
+const deleteCourses = require("./functions/deleteCourse.js");
 
 //create form view
 const updateCourseView = require("./views/addNewCourseView");
