@@ -159,11 +159,11 @@ function addHeaders(table, keys) {
 }
 
 function addEdit(note) {
-  return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/edit_red.png" alt="edit course" title="edit course" /></a>`;
+  return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/edit_red.png" alt="Kurs ändern" title="KURS ÄNDERN" /></a>`;
 }
 
 function addDelete(note) {
-  return `<button onclick="confirmDelete('${note.Unitcode}')"><img class="image" src="resources/delete_red.png" alt="delete course"/></button>`;
+  return `<button onclick="confirmDelete('${note.Unitcode}')"><img class="image" src="resources/delete_red.png" alt="Kurs löschen" title="KURS LÖSCHEN"/></button>`;
 }
 
 /**
