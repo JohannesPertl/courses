@@ -344,20 +344,34 @@ button  {
 #btnPrint {
   float:left;
   cursor: pointer; /* Mouse pointer on hover */
-  margin-top: 21px;
+  margin-top: 20px;
   margin-left: 5px;
 }
 
 /* Print-Icon */
 .image {
-  width: 4vh;
+  width: 5vh;
 }
 
 #btnAdd {
   cursor: pointer; /* Mouse pointer on hover */
   margin-left: 15px;
   float: left;
-  margin-top: 21px;
+  margin-top: 20px;
+}
+
+#btnExportPDF {
+    cursor: pointer; /* Mouse pointer on hover */
+    margin-left: 5px;
+    float: left;
+    margin-top: 20px;
+}
+
+#btnExportCSV {
+    cursor: pointer; /* Mouse pointer on hover */
+    margin-left: 5px;
+    float: left;
+    margin-top: 21px;
 }
 
 

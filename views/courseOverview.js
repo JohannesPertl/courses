@@ -57,7 +57,30 @@ function printTable() {
               title="DRUCKEN"
             />
           </button>
-        </div>
+           </div>
+           
+           <div class="print">
+           <button id="btnExportPDF">
+            <img
+              class="image"
+              src="resources/exportPDF.png"
+              alt="Als PDF exportieren"
+              title="EXPORTIEREN"
+            />
+          </button>
+           </div>
+           
+           <div class="print">
+           <button id="btnExportCSV">
+            <img
+              class="image"
+              src="resources/exportCsv.png"
+              alt="Als CSV exportieren"
+              title="EXPORTIEREN"
+            />
+          </button>
+           </div>
+           
         </div>
          
         <div class="row">
