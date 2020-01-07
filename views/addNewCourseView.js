@@ -111,7 +111,7 @@ function addNewCourseView(courses) {
                 <button id="btnCheck">
                 <img
                 class="image"
-                src="resources/iconCheck.png"
+                src="resources/check_red.png"
                 alt="Speichern"
                 />
                 <span>SPEICHERN</span>

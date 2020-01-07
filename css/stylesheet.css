@@ -455,11 +455,7 @@ a:visited {
 }
 
 .deleteButton {
-  width: 39px;
-  height: 39px;
-  border-radius: 50%;
-  border-style: solid;
-  background-image: url("../resources/iconDelete.png");
-  background-repeat: no-repeat;
+
+
   cursor: pointer;
 }

@@ -52,7 +52,7 @@ function printTable() {
           <a id="btnAdd" href="/new-course">
             <img
               class="image"
-              src="resources/iconAdd.png"
+              src="resources/add_red.png"
               alt="Hinzufügen"
             /><span>NEUER KURS</span>
           </a>
@@ -61,7 +61,7 @@ function printTable() {
           <button id="btnPrint">
             <img
               class="image"
-              src="resources/icon_printer_blk.png"
+              src="resources/print_red.png"
               alt="Drucken"
             /><span>DRUCKEN</span>
           </button>
