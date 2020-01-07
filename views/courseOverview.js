@@ -36,8 +36,30 @@ function printTable() {
             id="search-courses"
             onkeyup="SearchTable()"
           />
+          
+          <div class="print">
+          <a id="btnAdd" href="/new-course">
+            <img
+              class="image"
+              src="resources/add_red.png"
+              alt="Neuer Kurs"
+              title="NEUEN KURS HINZUFÜGEN"
+            />
+          </a>
+          </div>
+          
+           <div class="print">
+           <button id="btnPrint">
+            <img
+              class="image"
+              src="resources/print_red.png"
+              alt="Drucken"
+              title="DRUCKEN"
+            />
+          </button>
         </div>
-       
+        </div>
+         
         <div class="row">
           <div class="col-12 col-s-12">
             <div id="container" class="table-container"></div>
@@ -45,28 +67,7 @@ function printTable() {
         </div>
         <!-- close container -->
         </div>
-      
-        
-      <footer>
-      <div class="print">
-          <a id="btnAdd" href="/new-course">
-            <img
-              class="image"
-              src="resources/add_red.png"
-              alt="Hinzufügen"
-            /><span>NEUER KURS</span>
-          </a>
-        </div>
-        <div class="print">
-          <button id="btnPrint">
-            <img
-              class="image"
-              src="resources/print_red.png"
-              alt="Drucken"
-            /><span>DRUCKEN</span>
-          </button>
-        </div>
-      </footer>
+    
     </body>
   </html>`;
 }

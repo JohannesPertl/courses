@@ -148,7 +148,7 @@ h1 {
 }
 
 .searchtext {
-  font-size: 15px;
+  font-size: 18px;
   font-family: "Helvetica", sans-serif;
   float: left;
   margin-left: 15px;
@@ -160,7 +160,7 @@ h1 {
 
 .search input {
   width: 165px;
-  margin-top: 18px;
+  margin-top: 23px;
   float: left;
   margin-left: 5px;
 }
@@ -168,7 +168,7 @@ h1 {
 .search input[type="text"] {
   background-color: #f8f8f8;
   color: #cc0033;
-  font-size: 20px;
+  font-size: 25px;
   padding-left: 0.5%;
   padding-top: 0;
   padding-bottom: 0;
@@ -342,22 +342,10 @@ button  {
 
 /* Print-Button */
 #btnPrint {
-  text-align: justify;
-  background-color: #cc0033;
-  color: white;
-  font-size: large;
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
+  float:left;
   cursor: pointer; /* Mouse pointer on hover */
-  margin: 5px;
-  border: 0.2vh solid;
-  border-radius: 1.5vh;
-  padding: 13px;
-  /* sticky button in bottom right */
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  float: right;
+  margin-top: 21px;
+  margin-left: 5px;
 }
 
 /* Print-Icon */
@@ -366,34 +354,19 @@ button  {
 }
 
 #btnAdd {
-  background-color: #cc0033;
   cursor: pointer; /* Mouse pointer on hover */
-  margin: 5px;
-
-  border: 0.2vh solid;
-  border-radius: 1.5vh;
-  padding: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  font-size: large;
-  font-family: Helvetica, sans-serif;
-  font-weight: bold;
-  /* sticky button in bottom right */
-  position: fixed;
-
-  bottom: 0;
-  float: right;
+  margin-left: 15px;
+  float: left;
+  margin-top: 21px;
 }
+
 
 #btnCheck {
   background-color: #cc0033;
   cursor: pointer; /* Mouse pointer on hover */
   margin-top: 0;
   margin-bottom: 2%;
-  border: 0.2vh solid #cc0033;
+  border: 0.2vh solid;
   border-radius: 1.5vh;
   padding-right: 10px;
   padding-top: 7px;
