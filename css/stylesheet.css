@@ -148,21 +148,22 @@ h1 {
 }
 
 .searchtext {
-  font-size: 18px;
+  font-size: 16px;
   font-family: "Helvetica", sans-serif;
   float: left;
   margin-left: 15px;
   margin-top: 0;
-  margin-right: 0.7%;
+  margin-right: 5px;
   color: #cc0033;
   display: inline;
 }
 
 .search input {
-  width: 165px;
-  margin-top: 23px;
+  width: 180px;
+  margin-top: 20px;
   float: left;
-  margin-left: 5px;
+  margin-right: 5px;
+
 }
 
 .search input[type="text"] {
@@ -172,6 +173,7 @@ h1 {
   padding-left: 0.5%;
   padding-top: 0;
   padding-bottom: 0;
+  float: left;
 }
 
 /* Table */
@@ -184,7 +186,7 @@ table {
   table-layout: fixed;
   font-family: "Helvetica", sans-serif;
   font-size: 14px;
-  margin-bottom: 3%;
+
 }
 
 table caption {
@@ -338,40 +340,41 @@ button  {
     border: none;
     background: none;
     cursor: pointer;
+
 }
 
 /* Print-Button */
 #btnPrint {
   float:left;
   cursor: pointer; /* Mouse pointer on hover */
-  margin-top: 20px;
-  margin-left: 5px;
+  margin-top: 17px;
+  margin-left: 3px;
 }
 
 /* Print-Icon */
 .image {
-  width: 5vh;
+  width: 4.5vh;
 }
 
 #btnAdd {
   cursor: pointer; /* Mouse pointer on hover */
-  margin-left: 15px;
+
   float: left;
-  margin-top: 20px;
+  margin-top: 17px;
 }
 
 #btnExportPDF {
     cursor: pointer; /* Mouse pointer on hover */
-    margin-left: 5px;
+    margin-left: 3px;
     float: left;
-    margin-top: 20px;
+    margin-top: 17px;
 }
 
 #btnExportCSV {
     cursor: pointer; /* Mouse pointer on hover */
-    margin-left: 5px;
+    margin-left: 3px;
     float: left;
-    margin-top: 21px;
+    margin-top: 17px;
 }
 
 

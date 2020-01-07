@@ -159,7 +159,7 @@ function addHeaders(table, keys) {
 }
 
 function addEdit(note) {
-  return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/edit_red.png" alt="Kurs ändern" title="KURS ÄNDERN" /></a>`;
+  return `<a href="/changeCourse/${note.Unitcode}"><img class="image" src="/resources/edit_red.png" alt="Kurs bearbeiten" title="KURS BEARBEITEN" /></a>`;
 }
 
 function addDelete(note) {
