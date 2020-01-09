@@ -74,7 +74,7 @@ function printTable() {
            <button id="btnExportCSV">
             <img
               class="image"
-              src="resources/exportCsv_red.png"
+              src="resources/exportCSV_red.png"
               alt="Als CSV exportieren"
               title="ALS CSV EXPORTIEREN"
             />
