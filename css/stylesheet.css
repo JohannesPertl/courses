@@ -159,7 +159,7 @@ h1 {
 }
 
 .search input {
-  width: 180px;
+  width: 190px;
   margin-top: 20px;
   float: left;
   margin-right: 5px;
@@ -340,6 +340,7 @@ button  {
     border: none;
     background: none;
     cursor: pointer;
+    margin-left: 3px;
 
 }
 
@@ -358,7 +359,7 @@ button  {
 
 #btnAdd {
   cursor: pointer; /* Mouse pointer on hover */
-
+  margin-right: 4px;
   float: left;
   margin-top: 17px;
 }
@@ -450,4 +451,4 @@ a:visited {
   border: 2px solid #cc0033;
 }
 
-.delete
+

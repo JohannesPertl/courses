@@ -63,9 +63,9 @@ function printTable() {
            <button id="btnExportPDF">
             <img
               class="image"
-              src="resources/exportPDF.png"
+              src="resources/exportPDF_red.png"
               alt="Als PDF exportieren"
-              title="EXPORTIEREN"
+              title="ALS PDF EXPORTIEREN"
             />
           </button>
            </div>
@@ -74,9 +74,9 @@ function printTable() {
            <button id="btnExportCSV">
             <img
               class="image"
-              src="resources/exportCsv.png"
+              src="resources/exportCsv_red.png"
               alt="Als CSV exportieren"
-              title="EXPORTIEREN"
+              title="ALS CSV EXPORTIEREN"
             />
           </button>
            </div>
