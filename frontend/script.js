@@ -150,11 +150,11 @@ function addHeaders(table, keys) {
   }
   let cell = row.appendChild(document.createElement("th"));
   cell.appendChild(document.createTextNode(""));
-  cell.className = "table-header";
+  cell.className = "table-header print";
   cell.setAttribute("scope", "col");
   cell = row.appendChild(document.createElement("th"));
   cell.appendChild(document.createTextNode(""));
-  cell.className = "table-header";
+  cell.className = "table-header print";
   cell.setAttribute("scope", "col");
 }
 
