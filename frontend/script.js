@@ -8,8 +8,18 @@ const JSON_FILE = "data/courses.json";
  */
 window.addEventListener("load", function() {
   readDataFromJson(JSON_FILE);
-  let btn = document.getElementById("btnPrint");
-  btn.addEventListener("click", printTableView);
+  let btnPrint = document.getElementById("btnPrint");
+  btnPrint.addEventListener("click", printTableView);
+
+  let btnPDF = document.getElementById("btnExportPDF");
+  btnPDF.addEventListener('click', event => {
+    location.replace(`export/pdf`)
+  });
+
+  let btnCSV = document.getElementById("btnExportCSV");
+  btnCSV.addEventListener('click', event => {
+    location.replace(`export/csv`)
+  });
 });
 
 /**
