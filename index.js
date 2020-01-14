@@ -140,7 +140,7 @@ const server = http.createServer((request, response) => {
           send(response, exportCSV(courses));
       } else if (parts.includes("pdf")) {
         console.log("pdf");
-          send(response, exportPDF(courses));
+          send(response, exportPDF(courseOverview()));
           redirect(response, "/");
       }
       /**
