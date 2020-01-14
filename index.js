@@ -6,7 +6,8 @@ const courseOverview = require("./views/courseOverview.js");
 const addNewCourse = require("./functions/addNewCourse.js");
 const changeCourse = require("./functions/changeCourse.js");
 const deleteCourses = require("./functions/deleteCourse.js");
-
+const exportCSV = require("./functions/exportCSV.js");
+const exportPDF = require("./functions/exportPDF.js");
 //create form view
 const updateCourseView = require("./views/addNewCourseView");
 const editCourseView = require("./views/editCourseView");
@@ -130,9 +131,18 @@ const server = http.createServer((request, response) => {
         }
       }
     });
-    /**
-     * print the overview
-     */
+      /**
+       * export functions
+       */
+  } else if (parts.includes("export")){
+      if (parts.includes('csv') ){
+          send(response, exportCSV(courses));
+      } else if (parts.includes("pdf")) {
+          send(response, exportPDF(courses));
+      }
+      /**
+       * print the overview
+       */
   } else {
     send(response, courseOverview());
   }
