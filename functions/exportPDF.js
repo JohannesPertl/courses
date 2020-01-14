@@ -1,64 +1,58 @@
-const fs = require('fs');
-const jsPDF = require('jspdf/dist/jspdf.node.min');
+const fs = require("fs");
+let PDFDocument = require('pdfkit');
 
-function exportPDF(courses) {
-    console.log(courses);
+function exportPDF(courses, response, filename) {
+    ws = fs.createWriteStream(filename);
+    ws.on('finish', function () {
+        console.log("finished");
+    });
+    // for Getting Started details at http://pdfkit.org/docs/getting_started.html
+    let pdf = new PDFDocument({
+        size: 'A4', // See other page sizes here: https://github.com/devongovett/pdfkit/blob/d95b826475dd325fb29ef007a9c1bf7a527e9808/lib/page.coffee#L69
+        info: {
+            Title: 'Course Export',
+            Author: 'Team Senil',
+        }
+    });
 
-    global.window = {document: {createElementNS: () => {return {}} }};
-    global.navigator = {};
-    global.btoa = () => {};
+    // Write into PDF
+    pdf.fontSize(25).text('Course list:');
+    pdf.fontSize(12).text('Exported List of Courses');
 
+    // Set the font size
+    pdf.fontSize(18);
 
+    pdf.list(["Unitcode, Name, Typ, Modul, SWS, ECTS, Semester, Studium, Lehrender, Wahlpflicht"]);
+    // create for each note a new bullet point
+    pdf.fontSize(14);
+    courses.forEach(function(row) {
+        //console.log(row);
+        pdf.list([
+            row.Unitcode + ", " +
+            row.Name + ", " +
+            row.Typ + ", " +
+            row.Modul + ", " +
+            row.SWS + ", " +
+            row.ECTS + ", " +
+            row.Semester + ", " +
+            row.Studium + ", " +
+            row.Lehrender + ", " +
+            row.Wahlpflicht
+        ]);     // https://github.com/foliojs/pdfkit/issues/582
+    });
 
-// Default export is a4 paper, portrait, using milimeters for units
-    var doc = new jsPDF();
+    // Stream contents to PDF file
+    pdf
+        .on('finish', function () {
+            console.log("Write to export.pdf successfully!");
+        })
+        .pipe(ws);
 
-    doc.text('Hello world!', 10, 10)
+    // write to http response
+    pdf.pipe(response);
 
-    fs.writeFileSync('./output.pdf', doc.output())
-// doc.save('a4.pdf')
-
-    delete global.window;
-    delete global.navigator;
-    delete global.btoa;
-
-
-    // var pdf = require("pdf-creator-node");
-    // var fs = require('fs');
-
-    // let options = {
-    //     format: "A3",
-    //     orientation: "portrait",
-    //     border: "10mm",
-    //     header: {
-    //         height: "45mm",
-    //         contents: '<div style="text-align: center;">Author: Lukas</div>'
-    //     },
-    //     "footer": {
-    //         "height": "28mm",
-    //         "contents": {
-    //             first: 'Cover page',
-    //             2: 'Second page', // Any page number is working. 1-based index
-    //             default: '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>', // fallback value
-    //             last: 'Last Page'
-    //         }
-    //     }
-    // };
-    // var document = {
-    //     html: courses,
-    //     data: {
-    //        users: users
-    //     },
-    //     path: "./output.pdf"
-    // };
-    //
-    // pdf.create(courses, options)
-    //     .then(res => {
-    //         console.log(res)
-    //     }).catch(error => {
-    //     console.log(error)
-    // })
-
+    // close pdf document
+    pdf.end();
 }
 
 module.exports = exportPDF;
