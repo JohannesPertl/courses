@@ -135,10 +135,13 @@ const server = http.createServer((request, response) => {
        * export functions
        */
   } else if (parts.includes("export")){
+    console.log("export");
       if (parts.includes('csv') ){
           send(response, exportCSV(courses));
       } else if (parts.includes("pdf")) {
+        console.log("pdf");
           send(response, exportPDF(courses));
+          redirect(response, "/");
       }
       /**
        * print the overview
