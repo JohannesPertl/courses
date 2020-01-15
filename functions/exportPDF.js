@@ -12,7 +12,7 @@ function exportPDF(courses, response, filename) {
         info: {
             Title: 'Course Export',
             Author: 'Team Senil',
-        }
+        },
     });
 
     // Write into PDF

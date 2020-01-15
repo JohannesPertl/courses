@@ -13,7 +13,9 @@ window.addEventListener("load", function() {
 
   let btnPDF = document.getElementById("btnExportPDF");
   btnPDF.addEventListener('click', event => {
-    location.replace(`export/export.pdf`)
+    let win = window.open('export/export.pdf', '_blank');
+    win.focus();
+    // location.replace(`export/export.pdf`)
   });
 
   let btnCSV = document.getElementById("btnExportCSV");
