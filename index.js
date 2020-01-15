@@ -86,11 +86,10 @@ const server = http.createServer((request, response) => {
     form.parse(request, (err, course, files) => {
       courses = addNewCourse(courses, course);
 
-      if (courses) {
-        redirect(response, "/");
-      } else {
-        // TODO -> what is wrong? message to user
+      if(!courses){
+        console.log("ERROR: Couldn't save new course.");
       }
+      redirect(response, "/");
     });
     /**
      * delete selected courses
@@ -99,12 +98,10 @@ const server = http.createServer((request, response) => {
     if (parts.length === 3) {
       let unitCode = parts[2];
       let result = deleteCourses(courses, unitCode);
-      if (result) {
-        redirect(response, "/");
-      } else {
-        // error
-        redirect(response, "/");
+      if (!result) {
+        console.log(`ERROR: Couldn't delete course with Unit Code ${unitCode}.`);
       }
+      redirect(response, "/");
     }
     /**
      * print the edit form
@@ -123,12 +120,11 @@ const server = http.createServer((request, response) => {
     form.parse(request, (err, course, files) => {
       if (parts.length === 3) {
         let unitCode = parts[2];
-        courses = changeCourse(courses, unitCode);
-        if (courses) {
-          redirect(response, "/");
-        } else {
-          // TODO -> what is wrong? message to user
+        courses = changeCourse(courses, course, unitCode);
+        if (!courses) {
+          console.log(`ERROR: Couldn't save changes for course with Unit Code ${unitCode}.`);
         }
+        redirect(response, "/");
       }
     });
       /**

@@ -15,7 +15,7 @@ function editCourseView(courses, code) {
 
   let inputFormHeader = "Kurs ändern";
 
-  //Check for duplicates
+  // Check for duplicates
   let existingUnitcodes = "\\b";
   let existingNames = "\\b";
   let found = false;
