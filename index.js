@@ -138,7 +138,7 @@ const server = http.createServer((request, response) => {
     console.log("export");
       if (parts.includes('csv') ){
           send(response, exportCSV(courses));
-      } else if (parts.includes("pdf")) {
+      } else if (parts.includes("export.pdf")) {
         console.log("pdf");
           exportPDF(courses, response, "export.pdf");
       }
