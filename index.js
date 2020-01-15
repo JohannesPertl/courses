@@ -133,7 +133,7 @@ const server = http.createServer((request, response) => {
   } else if (parts.includes("export")){
     console.log("export");
       if (parts.includes('csv') ){
-          send(response, exportCSV(courses));
+        exportCSV(courses, response, "export.csv");
       } else if (parts.includes("export.pdf")) {
         console.log("pdf");
           exportPDF(courses, response, "export.pdf");
