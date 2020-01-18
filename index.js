@@ -43,6 +43,8 @@ const server = http.createServer((request, response) => {
         response.statusCode = 404;
         response.end();
       } else {
+        response.setHeader("content-type", "application/json");
+        response.writeHead(200);
         response.end(data);
       }
     });
@@ -86,7 +88,7 @@ const server = http.createServer((request, response) => {
     form.parse(request, (err, course, files) => {
       courses = addNewCourse(courses, course);
 
-      if(!courses){
+      if (!courses) {
         console.log("ERROR: Couldn't save new course.");
       }
       redirect(response, "/");
@@ -127,20 +129,20 @@ const server = http.createServer((request, response) => {
         redirect(response, "/");
       }
     });
-      /**
-       * export functions
-       */
-  } else if (parts.includes("export")){
+    /**
+     * export functions
+     */
+  } else if (parts.includes("export")) {
     console.log("export");
-      if (parts.includes('csv') ){
-        exportCSV(courses, response, "export.csv");
-      } else if (parts.includes("export.pdf")) {
-        console.log("pdf");
-          exportPDF(courses, response, "export.pdf");
-      }
-      /**
-       * print the overview
-       */
+    if (parts.includes("csv")) {
+      exportCSV(courses, response, "export.csv");
+    } else if (parts.includes("export.pdf")) {
+      console.log("pdf");
+      exportPDF(courses, response, "export.pdf");
+    }
+    /**
+     * print the overview
+     */
   } else {
     send(response, courseOverview());
   }
