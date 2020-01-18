@@ -339,6 +339,11 @@ button {
   margin-left: 3px;
 }
 
+#btnDelete{
+  padding: 0;
+  margin: 0;
+}
+
 /* Print-Button */
 #btnPrint {
   float: left;

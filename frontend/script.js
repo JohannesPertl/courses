@@ -175,7 +175,7 @@ function addEdit(note) {
 }
 
 function addDelete(note) {
-  return `<button onclick="confirmDelete('${note.Unitcode}')"><img class="image" src="resources/delete_red.png" alt="Kurs löschen" title="KURS LÖSCHEN"/></button>`;
+  return `<button id="btnDelete" onclick="confirmDelete('${note.Unitcode}')"><img class="image" src="resources/delete_red.png" alt="Kurs löschen" title="KURS LÖSCHEN"/></button>`;
 }
 
 /**
