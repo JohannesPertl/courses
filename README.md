@@ -1,6 +1,6 @@
-<h1 align=center><a href="https://msd-course.herokuapp.com">Course Management System</a></h1>
+<h1 align=center><a href="https://msd-courses.herokuapp.com">Course Management System</a></h1>
 
-<p align=center>Website created for educational purposes in Web-Application-Development and Agiles Projektmanagement at the FH Joanneum. <br><br>https://msd-course.herokuapp.com</p>
+<p align=center>Website created for educational purposes in Web-Application-Development and Agiles Projektmanagement at the FH Joanneum. <br><br>https://msd-courses.herokuapp.com</p>
 
 ## Table of Contents
 
