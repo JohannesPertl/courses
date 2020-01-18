@@ -30,6 +30,8 @@ const server = http.createServer((request, response) => {
         response.statusCode = 404;
         response.end();
       } else {
+        response.setHeader("content-type", "application/x-javascript");
+        response.writeHead(200);
         response.end(data);
       }
     });
