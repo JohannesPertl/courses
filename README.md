@@ -70,7 +70,7 @@ Two new buttons at the top of the page make it possible to export the courses as
 
 
 
-## Authors
+## Contributors
 * [Hacker Manuel](https://github.com/HackerManuel)
 * [Olczak Liliana](https://github.com/LiliOlczack)
 * [Pertl Johannes](https://github.com/JohannesPertl)
